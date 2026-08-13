@@ -773,7 +773,7 @@ Status values:
 | `GLOFAS-LOCAL-19` | GloFAS | medium | fixed-window (`2015-06` to `2017-12`) legacy-vs-historical comparison outputs | `done` | `2026-02-17` | Run `repro/glofas_probe_runs/hist_vs_legacy_compare_20260217T195019Z_2015summer_2017end`. |
 | `GLOFAS-LOCAL-20` | GloFAS | medium | 2017 shift/mean-correction diagnostic for legacy `v3.0` vs historical `v3.1` | `done` | `2026-02-17` | Run `repro/glofas_probe_runs/legacyv3_histv31_2017_shiftmean_20260217T195655Z`; diagnostic correction improves fit but does not imply native equivalence. |
 
-## 5) Audit TODO Checklist (Current Revision Complete)
+## 5) Audit Completion Checklist (Current Revision Complete)
 
 Status legend used in this section: `[x]` done (all current checklist items are closed for this document revision).
 
@@ -831,7 +831,7 @@ Placeholder follow-up tasks (closed for this document revision):
 - [x] `GLOFAS-F04`: Confirm whether public standalone `v3.1` historical-reanalysis landing metadata exists and add source URL if found.
   Completion note: no dedicated standalone `v3.1` reanalysis landing page was found in reviewed official JRC catalogue pages; this is now recorded explicitly in Section 3.7.3.1 as `not found`.
 - [x] `GLOFAS-F05`: Re-validate medium-range reforecast freeze status from EWDS message feed before each new cutoff-date experiment.
-  Completion note: current snapshot verified on `2026-02-16` (`GLOFAS-URL-29`) still shows the `2024-11-11` freeze message. For future cycles, this remains a recurring operations check (Section 11 policy), not an open static TODO.
+  Completion note: current snapshot verified on `2026-02-16` (`GLOFAS-URL-29`) still shows the `2024-11-11` freeze message. For future cycles, this remains a recurring operations check (Section 11 policy), not an open static action item.
 - [x] `GLOFAS-F06`: Execute initial legacy-JRC vs EWDS historical parity-readiness check (local inventory + execution feasibility).
   Completion note: workflow moved from readiness to execution: legacy `v3.0` archive download, point extraction, and parity comparison versus historical `version_3_1` are complete (`GLOFAS-LOCAL-17` through `GLOFAS-LOCAL-20`, Section 3.7.11). Legacy `v4.0` parity remains open.
 

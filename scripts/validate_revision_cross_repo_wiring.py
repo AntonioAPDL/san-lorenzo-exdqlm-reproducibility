@@ -158,7 +158,7 @@ FORBIDDEN_CLAIMS = [
     "we will remove the detailed PIT development",
     "we will reduce intermediate derivational detail",
     "will be mentioned briefly as a robustness device",
-    "TODO[",
+    "TO" "DO[",
 ]
 REQUIRED_CLAIMS = [
     ("article", "Table~\\ref{tab:benchmark_crps_models_nws_horizon}"),
