@@ -1,0 +1,14 @@
+{
+  "canonical_gdpc_config": "/data/muscat_data/jaguir26/project1_ucsc_phd/config/canonical_gdpc_master_covariate.yaml",
+  "canonical_gdpc_pca_alias_source": "/data/muscat_data/jaguir26/project1_ucsc_phd/data/canonical_gdpc_master/v20260509/outputs/compat/cov_05_PCA.csv",
+  "covariates": {
+    "ELI": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/covariates/cov_01_ELI.csv",
+    "ONI": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/covariates/cov_02_ONI.csv",
+    "PCA": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/covariates/cov_05_PCA.csv",
+    "PPT": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/covariates/cov_03_PPT.csv",
+    "SOIL": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/covariates/cov_04_SOIL.csv"
+  },
+  "created_at_utc": "2026-06-30T05:28:54Z",
+  "parameters": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/parameters/parameters.txt",
+  "source_root": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared"
+}

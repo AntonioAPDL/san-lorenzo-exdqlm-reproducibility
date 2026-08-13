@@ -1,0 +1,41 @@
+{
+  "created_at_utc": "2026-06-30T05:28:55Z",
+  "cutoff": "20210123",
+  "cutoff_date": "2021-01-23",
+  "data_start": "1987-05-29",
+  "forecast_member_counts": {
+    "glofas": 51,
+    "nws": 7
+  },
+  "legacy_log_ready_repairs": [
+    {
+      "column": "usgs_cms",
+      "floor_value_cms": 0.17358226965800008,
+      "replaced_nonpositive_count": 0,
+      "selected_window_nonpositive_count": 0
+    },
+    {
+      "column": "glofas_cms",
+      "floor_value_cms": 0.007812499999999951,
+      "replaced_nonpositive_count": 0,
+      "selected_window_nonpositive_count": 0
+    },
+    {
+      "column": "nws_cms",
+      "floor_value_cms": 0.009999999776482473,
+      "replaced_nonpositive_count": 0,
+      "selected_window_nonpositive_count": 0
+    }
+  ],
+  "raw_ranges": {
+    "glofas_max": 68.25000000000017,
+    "glofas_min": 0.007812499999999951,
+    "nws_max": 324.31957608422476,
+    "nws_min": 0.009999999776482473,
+    "usgs_max": 241.25953303199896,
+    "usgs_min": 0.17358226965800008
+  },
+  "retros_end": "2021-01-23",
+  "retros_rows": 12294,
+  "retros_start": "1987-05-29"
+}

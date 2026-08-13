@@ -1,0 +1,67 @@
+authority:
+  id: "he2_exal_m_t1_representative_20221225"
+  article_object_family: "he2_representative_exal_m_t1"
+  purpose: "Single selected-output authority for representative HE2 exAL-M-T1 posterior figures and tables."
+  created_utc: "2026-06-23T00:00:00Z"
+  authoritative_winner_manifest: "config/he2_publication_manifest_replacement_overlay_current_authority_20260623.yaml"
+  selected_cutoff: "20221225"
+  selected_cutoff_date: "2022-12-25"
+  model_label: "exAL-M-T1"
+  model_family: "exdqlm_multivar_keep"
+  model_id: "exdqlm_multivar_synth_keep"
+  spec_id: "s01_eps001"
+  discount_case_id: "s01"
+  epsilon_value: 1
+  c_factor: 1.0
+  max_iter: 120
+  data_start: "1987-05-29"
+  active_quantiles: "05|20|35|50|65|80|95"
+  representative_quantiles_for_article:
+    - "05"
+    - "50"
+    - "95"
+  score_scale: "log_cms_plus1"
+  figure_scale: "log1p_cms"
+  runtime_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623"
+  run_id: "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
+  runtime_run_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
+  runtime_output_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep/post/outputs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
+  input_bundle_contract:
+    bundle_artifact_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510"
+    bundle_run_id: "20260510_publication_shared_r01"
+    description: "PPT|SOIL|PCA(alias=GDPC1) publication shared inputs."
+  discount_factors:
+    df_t: 0.999999
+    df_s1: 0.9995
+    df_s2: 0.9995
+    df_s67: 0.9999
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.9999999
+    df_covs: 0.9999999
+  selected_score:
+    mean_crps: 0.5380554847458453
+    median_crps: 0.4047507333142001
+    max_crps: 1.956954382762663
+    replaced_source_run_id: "multimodel_20221225_v8_he2grid_c05_eps030_exdqlm_multivar_keep"
+    replaced_source_mean_crps: 0.6654596601212303
+    clean_replay_abs_improvement: 0.1274041753753850
+  cleanup_policy:
+    cleanup_after_post: true
+    retain_rdata_long_term: false
+    durable_support_required_before_cleanup: true
+    current_selected_run_rdata_expected: false
+  article_sync_contract:
+    revised_article_root: "/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2"
+    representative_bundle_relpath: "artifacts/representative_selected_model_2022_12_25"
+    required_representative_posterior_figures:
+      - "fig:synth1"
+    required_representative_posterior_tables:
+      - "tab:components_23_31"
+      - "tab:gamma_sigma_intervals1"
+      - "tab:gamma_sigma_intervals2"
+    forbidden_representative_source_families:
+      - "historical_support_from_current_models"
+  current_gap:
+    status: "compact_support_rebuilt_from_retained_rdata"
+    detail: "Synthesis, posterior tables, source summaries, and covariate summaries are promoted from the clean 2026-06-23 authority. Dry/wet fitted-quantile diagnostics and the 80-month component diagnostic are now rendered from compact support rebuilt from retained current 2026-06-23 selected-model RData; the previous compact support root is used only to recover dates and observed USGS plotting values."

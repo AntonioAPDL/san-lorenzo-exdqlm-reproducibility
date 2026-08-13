@@ -1,0 +1,101 @@
+run:
+  run_id: 20260510_publication_shared_r01
+  created_at_utc: '2026-06-30T05:28:59Z'
+  bundle_kind: multimodel_v8_histfix_long_history
+site:
+  usgs_site: '11160500'
+  lat: 37.0443931
+  lon: -122.072464
+dates:
+  cutoff_date: '2022-12-25'
+  data_start: '1987-05-29'
+  plot_start: '2022-12-07'
+  plot_end: '2023-01-22'
+paths:
+  retros_daily: inputs/retros_daily.csv
+  nws_weighted_daily: inputs/nws_weighted_daily.csv
+  glofas_weighted_daily: inputs/glofas_weighted_daily.csv
+  nws_members: inputs/nws_members.csv
+  glofas_members: inputs/glofas_members.csv
+  retros_source_lineage: inputs/retros_source_lineage.csv
+forecast_issue_policy:
+  publication_protocol: latest_forecast_only
+  cross_issue_weighting_used: false
+  legacy_weighted_daily_filenames_are_aliases: true
+  nws:
+    selection_rule: latest_issue_datetime_per_target_hour_member_then_daily_mean
+    source_snapshot: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20221225_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
+  glofas:
+    selection_rule: issue_date_equals_cutoff
+    source_snapshot: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20221225_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
+histfix:
+  purpose: restore long-history retrospective support for the v8 corrected support-bundle
+    campaign
+  glofas_source_id: glofas_hist_v31_lisflood_cons
+  glofas_product_id: hist_v31_lisflood_cons
+  glofas_point_series_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/hist_v31_lisflood_cons_point.csv
+  glofas_point_series_meta: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/hist_v31_lisflood_cons_point.meta.json
+  nws_source_policy:
+    primary_source_id: nws_retro_v21
+    primary_daily_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/nws_retro_v21_daily.csv
+    tail_fill_source_id: nws_retro_v30
+    tail_fill_daily_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/nws_retro_v30_daily.csv
+    tail_fill_start: '2021-01-01'
+    selection_rule: use v2.1 through its natural coverage end; fill subsequent cutoff-era
+      dates from v3.0 daily retrospective
+  usgs_daily_source_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=usgs_daily_flow/full_runs/source_native_tranche1_20260406T194500Z/outputs/usgs_daily_flow_11160500.csv
+  support_manifest: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/support_manifest.json
+  legacy_log_ready_repairs:
+  - column: usgs_cms
+    floor_value_cms: 0.17358226965800008
+    replaced_nonpositive_count: 0
+    selected_window_nonpositive_count: 0
+  - column: glofas_cms
+    floor_value_cms: 9.999999999999999e-09
+    replaced_nonpositive_count: 0
+    selected_window_nonpositive_count: 0
+  - column: nws_cms
+    floor_value_cms: 0.009999999776482473
+    replaced_nonpositive_count: 0
+    selected_window_nonpositive_count: 0
+  forecast_member_sources:
+    nws: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20221225_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
+    glofas: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20221225_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
+  selected_window_splice:
+    retros_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep/inputs/shared/retros/retros.csv
+    overlap_start: '1987-05-29'
+    overlap_end: '2022-12-25'
+    rows_spliced: 12995
+    nws_source_id: nws_selected_window_retro
+    note: When available, the representative selected-run retros window is spliced
+      back into the repaired long-history bundle over the overlap so article support
+      figures match the selected fit inputs near the cutoff.
+config:
+  inputs:
+    retros:
+      selection_policy:
+        keep_source_ids: []
+        glofas_by_cutoff_windows:
+        - start: '2021-05-26'
+          end: '2023-07-25'
+          source_id: glofas_hist_v31_lisflood_cons
+        nws_by_cutoff_windows:
+        - start: '2021-04-20'
+          end: '2023-09-19'
+          source_id: nws_retro_v21
+          tail_fill_source_id: nws_retro_v30
+          tail_fill_start: '2021-01-01'
+transforms:
+  plot_scale: log1p_cms
+storage_scales:
+  retros_daily: log1p_cms
+  retros_source_lineage: raw_cms
+  nws_weighted_daily: raw_cms
+  glofas_weighted_daily: raw_cms
+  nws_members: raw_cms
+  glofas_members: raw_cms
+display_contract:
+  flow_support_figures_scale: log1p_cms
+  note: Support figures should display flow on the log1p support scale even though
+    representative selected runs may continue to use a deeper internal log_log1p analysis
+    scale.

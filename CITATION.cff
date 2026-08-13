@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility bundle, cite the associated article and the final archived release once available."
+title: "San Lorenzo exDQLM reproducibility bundle"
+type: dataset
+authors:
+  - family-names: Aguirre
+    given-names: Antonio
+  - family-names: Prado
+    given-names: Raquel
+  - family-names: Sanso
+    given-names: Bruno
+repository-code: "https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility"
+url: "https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility"
+version: "pending-final-archive"
+keywords:
+  - dynamic quantile linear model
+  - exDQLM
+  - hydrologic forecasting
+  - probabilistic forecasting
+  - reproducibility

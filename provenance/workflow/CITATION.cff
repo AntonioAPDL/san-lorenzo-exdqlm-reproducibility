@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this study workflow, cite the associated article and the final workflow archive once available. The permanent workflow archive DOI is pending final revision freeze."
+title: "Project1 workflow for Bayesian quantile-based correction and synthesis of river-flow forecasts"
+type: software
+authors:
+  - family-names: Aguirre
+    given-names: Antonio
+  - family-names: Prado
+    given-names: Raquel
+  - family-names: Sanso
+    given-names: Bruno
+repository-code: "https://github.com/AntonioAPDL/Project1"
+url: "https://github.com/AntonioAPDL/Project1"
+version: "pending-final-archive"
+keywords:
+  - dynamic quantile linear model
+  - exDQLM
+  - river-flow forecasting
+  - probabilistic forecasting
+  - reproducible workflow

@@ -1,0 +1,31 @@
+# Local runtime/build products
+__pycache__/
+.pytest_cache/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Heavy or raw runtime formats not allowed in the public repo
+*.RData
+*.rda
+*.rdata
+*.nc
+*.grib
+*.grib2
+*.zarr
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Local rerun outputs
+local_outputs/
+runtime/
+scratch/

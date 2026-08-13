@@ -1,0 +1,112 @@
+campaign:
+  campaign_id: he2_bayesian_publication_relaunch
+  campaign_spec_id: he2pubgdpc1r1
+  artifact_root: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_bayesian_publication_relaunch_20260510
+  matrix_dir: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_bayesian_publication_relaunch_20260510/control/publication_relaunch_matrix
+  config_output_dir: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_bayesian_publication_relaunch_20260510/control/generated_configs
+  cutoffs:
+    - '20210123'
+    - '20211112'
+    - '20211221'
+    - '20220511'
+    - '20221225'
+  families:
+    - ndlm_univar_keep
+    - ndlm_main_drop
+    - ndlm_main_keep
+    - dqlm_univar_al
+    - dqlm_multivar_al_drop
+    - dqlm_multivar_al_keep
+    - exdqlm_univar
+    - exdqlm_multivar_drop
+    - exdqlm_multivar_keep
+source:
+  publication_manifest: reports/he2_publication_manifest/he2_bayesian_publication_manifest.csv
+bundles:
+  artifact_root: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510
+  bundle_run_id: 20260510_publication_shared_r01
+  data_start: '1987-05-29'
+  cutoffs:
+    - '20210123'
+    - '20211112'
+    - '20211221'
+    - '20220511'
+    - '20221225'
+queue:
+  ordinary_max_concurrent: 2
+  pause_free_gb: 180
+  launch_free_gb: 200
+  heavy_free_gb: 205
+  heavy_cutoff_max_concurrent: 1
+  heavy_cutoff_blocks_ordinary: true
+  poll_seconds: 60
+selection:
+  cutoffs: []
+  families: []
+  manuscript_labels: []
+  run_ids: []
+  model_classes: []
+  quantiles: []
+  batch_file: ''
+resources:
+  fit_parallel_workers:
+  mc_cores:
+profiles:
+  active: default
+  definitions:
+    default: {}
+    serial_debug:
+      queue:
+        ordinary_max_concurrent: 1
+        heavy_cutoff_max_concurrent: 1
+      resources:
+        fit_parallel_workers: 1
+        mc_cores: 1
+      selection:
+        quantiles:
+          - 0.05
+    single_core_full:
+      queue:
+        ordinary_max_concurrent: 1
+        heavy_cutoff_max_concurrent: 1
+      resources:
+        fit_parallel_workers: 1
+        mc_cores: 1
+validation:
+  smoke_fit_overrides:
+    exdqlm_multivar:
+      gamma_sigma:
+        min_update_iters: 3
+        min_total_iters: 10
+        max_iter: 10
+      legacy:
+        n_samp: 512
+    exdqlm_univar:
+      gamma_sigma:
+        min_update_iters: 3
+        min_total_iters: 10
+        max_iter: 10
+      legacy:
+        n_samp: 512
+  family_smoke_cutoff: '20210123'
+  cutoff_smoke_family: exdqlm_multivar_keep
+  fit_smoke_family: ndlm_univar_keep
+  fit_smoke_cutoff: '20210123'
+  quantile_fit_smoke_family: exdqlm_multivar_keep
+  quantile_fit_smoke_cutoff: '20210123'
+  quantile_fit_smoke_quantiles:
+    - 0.05
+  univar_quantile_fit_smoke_family: exdqlm_univar
+  univar_quantile_fit_smoke_cutoff: '20210123'
+  univar_quantile_fit_smoke_quantiles:
+    - 0.05
+  full_pipeline_ndlm_family: ndlm_univar_keep
+  full_pipeline_ndlm_cutoff: '20210123'
+  full_pipeline_quantile_family: exdqlm_univar
+  full_pipeline_quantile_cutoff: '20210123'
+  full_pipeline_quantiles:
+    - 0.05
+  full_pipeline_univar_quantile_family: dqlm_univar_al
+  full_pipeline_univar_quantile_cutoff: '20210123'
+  full_pipeline_univar_quantiles:
+    - 0.05

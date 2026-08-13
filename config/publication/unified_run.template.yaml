@@ -1,0 +1,349 @@
+config_version: 1
+
+run:
+  run_id: null
+  run_root: "repro/runs"
+  repro_mode: "strict"
+  seed: 777
+  overwrite: false
+  dry_run: false
+  git_require_clean: false
+  io:
+    enabled: false               # when true, fail fast if free space/inodes are below thresholds
+    min_free_gb: 20              # legacy single-threshold fallback (kept for backward compatibility)
+    min_free_gb_start: null      # optional: fit-start comfort threshold (GB)
+    min_free_gb_continue: null   # optional: in-run continuation threshold (GB)
+    preflight_scope: "legacy"    # legacy | fit_start_and_continue | fit_start_only
+    min_free_inodes_pct: 5
+  threads:
+    omp: 1
+    openblas: 1
+    mkl: 1
+    veclib: 1
+    numexpr: 1
+    mc_cores: 1
+
+stages:
+  forecats: true
+  data_prep_shared: false
+  fit: true
+  post: true
+  validate: true
+  report: true
+
+models:
+  run_exdqlm_multivar: true
+  run_exdqlm_univar: false
+  run_ndlm_main: false
+  run_ndlm_univar: false
+  exdqlm_multivar:
+    implementation_mode: "legacy_bridge"   # legacy_bridge
+    likelihood_mode: "exal"                # exal | al
+    forecast_transfer_mode: "drop"         # drop | keep (keep retains transfer block during forecast window)
+    # Optional: run both transfer regimes in one unified run (repeats multivar fit/post per mode)
+    # forecast_transfer_modes: ["drop", "keep"]
+    state_evolution:
+      df_t:       0.99999999
+      df_s1:      0.9999
+      df_s2:      0.9999
+      df_s67:     0.9999
+      df_discrep: 0.999
+      lambda:     0.97
+      df_trans:   0.9999999
+      df_covs:    0.99999
+  exdqlm_univar:
+    implementation_mode: "legacy_bridge"    # legacy_bridge | theory_aligned
+    likelihood_mode: "exal"                 # exal | al
+    state_evolution:
+      df_t: 0.99999999
+      df_s1: 0.9999
+      df_s2: 0.9999
+      df_s67: 0.9999
+      lambda: 0.97
+      df_trans: 0.9999999
+      df_covs: 0.99999
+  ndlm_main:
+    implementation_mode: "theory_aligned"    # legacy_bridge | theory_aligned
+    kalman_backend: "cpp"                     # r | cpp
+    forecast_transfer_mode: "keep"            # keep | drop (keep = transfer active in forecast window)
+    seasonality:
+      period: 363.5854
+      harmonics: [1, 2, 0.14691084757818865]
+    state_evolution:
+      df_t: 0.99999999
+      df_s1: 0.9999
+      df_s2: 0.9999
+      df_s67: 0.9999
+      df_discrep: 0.999
+      lambda: 0.97
+      df_trans: 0.9999999
+      df_covs: 0.9999
+    prior:
+      forecast_cov:
+        c_factor: 1.0
+        epsilon: null
+        dof_offset: 4
+        scale_mult: 1.0
+        jitter: 1.0e-8
+    stabilization:
+      cov_eig_floor: 1.0e-8
+      cov_eig_cap: 1.0e8
+      cov_diag_jitter: 1.0e-10
+      sigma_upper_cap: 1.0e12
+      sigma_update_damping: 1.0
+      latent_var_cap_mult: 1.0e4
+      latent_var_cap_abs: 1.0e8
+  ndlm_univar:
+    implementation_mode: "theory_aligned_closed_form"  # theory_aligned_closed_form | theory_aligned
+    kalman_backend: "cpp"                               # r | cpp
+    forecast_transfer_mode: "keep"                      # keep | drop
+    seasonality:
+      period: 363.5854
+      harmonics: [1, 2, 0.14691084757818865]
+    horizon_cap: 1080
+    posterior_draws: 64
+    prior:
+      n0: 20
+      S0: 1
+    state_evolution:
+      df_t: 0.99999999
+      df_s1: 0.9999
+      df_s2: 0.9999
+      df_s67: 0.9999
+      lambda: 0.97
+      df_trans: 0.9999999
+      df_covs: 0.99999
+    stabilization:
+      cov_eig_floor: 1.0e-8
+      cov_eig_cap: 1.0e8
+      cov_diag_jitter: 1.0e-10
+
+site:
+  usgs_site: "11160500"
+  lat: 37.0443931
+  lon: -122.072464
+
+dates:
+  cutoff_date: "2022-12-25"
+  plot_start: "2022-12-07"
+  plot_end: "2023-01-22"
+  data_start: null               # optional YYYY-MM-DD; filters shared CSV inputs for debug-small runs
+
+inputs:
+  fit:
+    parameters_path: null
+    retros_path: null
+    retros_storage_scale: "log1p_cms"
+    nws_forecast_path: null
+    nws_storage_scale: "raw_cms"
+    glofas_forecast_path: null
+    glofas_storage_scale: "raw_cms"
+    usgs_mode: "live"
+    usgs_cache_path: null
+    covariates: []   # optional list of {name, path}
+  post:
+    use_fit_outputs_from_run: true
+    source_run_id: null          # optional: reuse fit outputs from an existing run id (post-only replay)
+    source_run_root: null        # optional: defaults to run.run_root when source_run_id is set
+  forecats:
+    mode: "use_existing"
+    pipeline_config_path: "config/forecats_pipeline.template.yaml"
+    existing_bundle_path: null
+    snapshot:
+      enabled: null                # null => default true for mode=build, false for mode=use_existing
+      dest_rel: "inputs/shared/forecats_bundle"
+      copy_list: []                # optional relative paths from bundle root; empty => minimal default set
+  shared:
+    prefer_forecats_snapshot: true
+  deterministic_climate:
+    enabled: false
+    handoff_root: null             # handoff cache root with catalogs/ and forecast_cache/
+    horizon_days: null             # null => derive from run-scoped GloFAS forecast window
+    require_full_horizon: true
+    precip:
+      enabled: true
+      source: "gefs_apcp"         # currently supported: gefs_apcp
+      reduction: "mean"           # mean | median | max | q85 | q0.85 across daily GEFS member totals
+      dry_day_threshold_mm: 0.0   # optional post-reduction censoring to zero for low-confidence drizzle
+      noisy_blend:
+        enabled: false
+        noise_sd: 15.0
+        noise_seed: 20260415
+        noise_distribution: "normal" # normal | abs_normal
+        floor_at_zero: true
+      observed_blend:
+        enabled: false
+        observed_weight: 0.9          # final = observed_weight * observed + (1-observed_weight) * noisy_forecast
+        observed_zero_stay_prob: null # optional: if observed precip is 0, keep final at 0 with this probability
+        observed_zero_stay_seed: 20260415
+    soil:
+      enabled: true
+      source: "nwm_soilsat_top"   # currently supported: nwm_soilsat_top | gefs_soilw_0_0.1m
+      reduction: "mean"           # mean | median | max | q85 | q0.85 across the chosen source members
+      noisy_blend:
+        enabled: false
+        noise_sd: 0.01
+        noise_seed: 20260415
+        noise_distribution: "normal" # normal | abs_normal
+        floor_at_zero: false
+      observed_blend:
+        enabled: false
+        observed_weight: 0.9
+        observed_zero_stay_prob: null
+        observed_zero_stay_seed: 20260415
+  covariate_features:
+    enabled: false
+    output_filename: "covariate_features.csv"
+    lag_orders: [1, 2, 3]
+    include_squares: true
+    include_interaction: true
+  shared_covariates: []            # legacy compatibility: list of covariate paths
+
+fit:
+  quantiles: [0.05, 0.2, 0.35, 0.5, 0.65, 0.8, 0.95]
+  parallel:
+    mode: "one_core_per_model"   # one_core_per_model | global_models | by_family
+    workers: null                # used by global_models only; null => run.threads.mc_cores
+  warm_start:
+    enabled: false
+    source_run_id: null
+    mode: "resume"
+  exdqlm_multivar:
+    gamma_sigma:
+      warmup_freeze_iters: 5
+      min_update_iters: 50          # require at least this many gamma/sigma update iterations before convergence stop
+      min_total_iters: 50           # require at least this many total VB iterations before convergence stop
+      max_iter: 100
+      convergence_tol: 1.0e-6       # legacy alias for ELBO criterion; prefer convergence.elbo_tol
+      convergence:
+        elbo_tol: 1.0e-6
+        state_norm_sq_tol: 1.0e-6
+        sigma_exp_tol: 1.0e-6
+        gamma_exp_tol: 1.0e-6
+      freeze_target: "gamma_sigma"   # gamma_sigma | states
+      guard_refreeze_iters: 10       # adaptive guard: additional freeze iterations after a non-finite guard event
+      init:
+        mode: "robust"               # legacy | robust
+        gamma: 0.0                   # robust mode only; clipped to quantile-implied [L,U]
+        sigma_floor: 1.0e-3          # robust mode only; lower bound for sigma init
+        sigma_scale: 1.0             # robust mode only; multiplier on robust response spread
+      objective_guard:
+        enabled: true          # set true to penalize non-finite gamma/sigma objective evaluations
+        fail_fast: false       # when true + enabled, stop immediately on first non-finite objective
+        log_failures: true
+        mode: "adaptive_freeze" # penalty | adaptive_freeze
+        penalty: 1.0e12
+      transfer_compare_fast:
+        enabled: false         # when true, override gamma/sigma iteration controls for fast drop-vs-keep comparisons
+        warmup_freeze_iters: 5
+        min_update_iters: 15
+        min_total_iters: 20
+        max_iter: 20
+    forecast_health:
+      enabled: true
+      fail_fast: true
+      write_reports: true
+      latent_limit: 650
+      sigma_limit: 100
+      state_limit: 1000
+    legacy:
+      lam1: 0.999999
+      lam2: 0.999999
+      n_samp: 2000
+      sims_enabled: true
+      use_covariates: true
+      forecast_cov:
+        c_factor: 1.0e2            # legacy DISC-W forecast-window covariance prior scaling
+  exdqlm_univar:
+    gamma_sigma:
+      warmup_freeze_iters: 5
+      min_update_iters: 50          # require at least this many gamma/sigma update iterations before convergence stop
+      min_total_iters: 50           # require at least this many total VB iterations before convergence stop
+      max_iter: 100
+      convergence_tol: 1.0e-6       # legacy alias for ELBO criterion; prefer convergence.elbo_tol
+      convergence:
+        elbo_tol: 1.0e-6
+        state_norm_sq_tol: 1.0e-6
+        sigma_exp_tol: 1.0e-6
+        gamma_exp_tol: 1.0e-6
+      freeze_target: "gamma_sigma"   # gamma_sigma | states
+      guard_refreeze_iters: 10       # adaptive guard: additional freeze iterations after a non-finite guard event
+      init:
+        mode: "robust"               # legacy | robust
+        gamma: 0.0                   # robust mode only; clipped to quantile-implied [L,U]
+        sigma_floor: 1.0e-3          # robust mode only; lower bound for sigma init
+        sigma_scale: 1.0             # robust mode only; multiplier on robust response spread
+      objective_guard:
+        enabled: true
+        fail_fast: false
+        log_failures: true
+        mode: "adaptive_freeze"      # penalty | adaptive_freeze
+        penalty: 1.0e12
+    legacy:
+      lam1: 0.9999999999999999
+      lam2: 0.9999999999999999
+      n_samp: 2000
+      sims_enabled: true
+      use_covariates: true
+  ndlm_main:
+    gamma_sigma:
+      min_total_iters: 50
+      max_iter: 100
+      convergence_tol: 1.0e-6       # legacy alias for ELBO criterion; prefer convergence.elbo_tol
+      convergence:
+        elbo_tol: 1.0e-6
+        elbo_rel_tol: 2.5e-4
+    legacy:
+      lam1: 0.999999
+      lam2: 0.9
+      n_samp: 2000
+      sims_enabled: true
+      use_covariates: true
+  contract_checks:
+    enabled: false
+    fail_fast: true
+    write_reports: true
+  diagnostics:
+    enabled: false
+    fail_fast: true
+    write_reports: true
+    max_time_checks: 25
+    seed: 777
+    psd_tol: -1.0e-10
+    full_slice_psd: false
+    psd_warn_tol: -1.0e-10
+    psd_fail_tol: -1.0e-10
+
+post:
+  figures: true
+  profile: false
+  profile_detail: false
+  allow_legacy_root_fallback: false  # deprecated compatibility path; removed from production/proof validation contracts
+  export_tables: true
+  table_formats: ["csv"]        # supported: csv, rds
+  crps_input_health:
+    enabled: true
+    fail_fast: false
+    min_finite_share: 1.0
+    max_abs: null
+
+validation:
+  profile: "production"          # production | production_proof | smoke
+  canonical_run_id: null
+  compare:
+    mode: "both"                 # hash | pixel | both | none
+    numeric_abs_tol: 0.0
+    numeric_rel_tol: 0.0
+    pixel_max_abs_tol: 0.0
+
+scale_contract:
+  canonical_storage_scale: "raw_cms"
+  legacy_fit_input_scale: "log1p_cms"
+  legacy_post_input_scale: "log1p_cms"
+  analysis_scale_fit_internal: "log1p_cms"
+  analysis_scale_post_internal: "log1p_cms"
+
+write_audit:
+  enabled: true
+  enforce_from_stage: 4          # production default; use 2 for migration/proof runs that must audit fit+post writes
+  allowlist_outside_run_root: []

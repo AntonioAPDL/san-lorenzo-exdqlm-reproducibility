@@ -1,0 +1,16 @@
+    site_code = 11160500
+    start_forecast = '2019-11-25'
+    percentiles = c(0.15,0.85)              
+    KK = 90                        
+    k_syy = 100                      
+    harmonics = c(1, 2, 1/6.8333333)       
+    v_vs = 100                    
+    sig.init = 1                 
+    gam.init = 0              
+    tol = 0.0015      
+    n.IS = 10000                    
+    n.samp = 300                  
+    k_step_ahead = 30
+    dqlm.ind = FALSE             
+    fix.sigma = FALSE
+    fix.gamma = FALSE  
