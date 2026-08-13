@@ -1,1 +1,1 @@
-STAGED_INPUT_BUNDLE_ROOT/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01
+STAGED_INPUT_REFERENCE

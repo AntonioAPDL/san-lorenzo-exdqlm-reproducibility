@@ -14,7 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION_MANIFEST_CSV = ROOT / 'reports' / 'he2_publication_manifest' / 'he2_bayesian_publication_manifest.csv'
 DEFAULT_BUNDLE_ARTIFACT_ROOT = Path('STAGED_INPUT_BUNDLE_ROOT')
-DEFAULT_RELAUNCH_ARTIFACT_ROOT = Path('SOURCE_RUNTIME_ROOT/multimodel_v8_he2_bayesian_publication_relaunch_20260510')
+DEFAULT_RELAUNCH_ARTIFACT_ROOT = Path('SOURCE_RUNTIME_REFERENCE')
 DEFAULT_BUNDLE_RUN_ID = '20260510_publication_shared_r01'
 DEFAULT_DATA_START = '1987-05-29'
 DEFAULT_CAMPAIGN_SPEC_ID = 'he2pubgdpc1r1'
@@ -61,11 +61,11 @@ MODEL_CLASS_BY_FAMILY = {
 }
 DEFAULT_QUANTILES = [0.05, 0.20, 0.35, 0.50, 0.65, 0.80, 0.95]
 AUTHORITATIVE_COMPARE_BY_CUTOFF = {
-    '20210123': Path('SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/reports/multimodel_20210123_v8_epsTT_compare'),
-    '20211112': Path('SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/reports/multimodel_20211112_v8_epsTT_compare'),
-    '20211221': Path('SOURCE_RUNTIME_ROOT/multimodel_v8_histfix_20260407/reports/multimodel_20211221_v8_epsTT_compare'),
-    '20220511': Path('SOURCE_RUNTIME_ROOT/multimodel_v8_histfix_20260407/reports/multimodel_20220511_v8_epsTT_compare'),
-    '20221225': Path('SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/reports/multimodel_20221225_v8_epsTT_compare'),
+    '20210123': Path('SOURCE_RUNTIME_REFERENCE'),
+    '20211112': Path('SOURCE_RUNTIME_REFERENCE'),
+    '20211221': Path('SOURCE_RUNTIME_REFERENCE'),
+    '20220511': Path('SOURCE_RUNTIME_REFERENCE'),
+    '20221225': Path('SOURCE_RUNTIME_REFERENCE'),
 }
 
 

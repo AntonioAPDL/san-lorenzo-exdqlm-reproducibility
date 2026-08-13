@@ -1,15 +1,15 @@
 {
-  "slug": "20221225_exal_m_t1",
+  "authoritative_manifest": "SOURCE_ARTICLE_REFERENCE",
   "cutoff": "2022-12-25",
   "cutoff_code": "20221225",
-  "multivar_run_id": "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep",
   "grid_spec_id": "20260510_publication_shared_r01",
-  "univar_run_id": "multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_univar",
-  "source_lineage": "exdqlm_multivar_keep_partial_authority_refresh_20260623:clean_replay",
-  "authoritative_manifest": "SOURCE_ARTICLE_ROOT/artifacts/he2_publication_freeze/he2_bayesian_publication_manifest.csv",
-  "runtime_run_root": "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep",
-  "runtime_output_root": "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep/post/outputs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep",
+  "multivar_run_id": "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep",
   "run_id": "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep",
-  "univar_runtime_run_root": "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_univar_al_exal_scale_repair_20260629/runs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_univar",
-  "univar_runtime_output_root": "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_univar_al_exal_scale_repair_20260629/runs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_univar/post/outputs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_univar"
+  "runtime_output_root": "SOURCE_RUNTIME_REFERENCE",
+  "runtime_run_root": "SOURCE_RUNTIME_REFERENCE",
+  "slug": "20221225_exal_m_t1",
+  "source_lineage": "exdqlm_multivar_keep_partial_authority_refresh_20260623:clean_replay",
+  "univar_run_id": "multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_univar",
+  "univar_runtime_output_root": "SOURCE_RUNTIME_REFERENCE",
+  "univar_runtime_run_root": "SOURCE_RUNTIME_REFERENCE"
 }

@@ -29,6 +29,10 @@ exists.
 - [x] Workflow-side validators check the article text, corrections text, and
   software availability manifest together.
 - [x] Root `README.md` explains the public workflow scope and exclusions.
+- [x] Public scope is limited to curated fitting/post-processing workflow code,
+  model-ready staged inputs, manuscript-facing outputs, and compact provenance;
+  raw climate-center retrievals and intermediate covariate-preprocessing
+  workflows are excluded.
 - [x] Root `CITATION.cff` exists without a workflow DOI until final archive.
 - [x] Pending-final-archive release notes exist.
 - [ ] Workflow repository license is confirmed by the authors.

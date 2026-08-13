@@ -1,10 +1,10 @@
 # exAL-M-T1 setup/support figures by cutoff (v2)
 
-This runtime family renders the corrected cutoff-specific setup/input/support figures from the CRPS-linked exAL-M-T1 run roots and the authoritative forecats/histfix bundles.
+This runtime family renders the corrected cutoff-specific setup/input/support figures from the CRPS-linked exAL-M-T1 run roots and the authoritative forecats/long_history_support bundles.
 
-Config: `SOURCE_WORKFLOW_ROOT/config/exal_m_t1_setup_support_by_cutoff_v2_20260516.json`
+Config: `SOURCE_WORKFLOW_REFERENCE
 
-Canonical GDPC factor: `SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/outputs/gdpc_master_component_01_19870529_20230122.csv`
+Canonical GDPC factor: `SOURCE_WORKFLOW_REFERENCE
 
 Flow-figure display scale: `log1p_cms`
 

@@ -35,7 +35,7 @@ issuances into the publication forecast matrix.
   publication configs set `latest`, and copies cache outputs into legacy
   `*_weighted_daily.csv` names for downstream compatibility.
 - `R/unified/stages/stage_forecats.R` and
-  `scripts/build_multimodel_v8_histfix_bundles.py` preserve those legacy aliases
+  `scripts/build_multimodel_v8_long_history_support_bundles.py` preserve those legacy aliases
   while also carrying explicit member-level `nws_members.csv` and
   `glofas_members.csv` paths.
 - Publication configs

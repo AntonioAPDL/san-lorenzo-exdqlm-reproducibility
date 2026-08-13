@@ -2592,7 +2592,7 @@ check_ts = function(dat){
 #
 is.exdqlm = function(m){ return(inherits(m,"exdqlm")) }
 
-parameters_path <- "LEGACY_EXAL_INPUT_ROOT/parameters/parameters.txt"
+parameters_path <- "LEGACY_EXAL_INPUT_REFERENCE"
 
 # Check if the file exists
 if (!file.exists(parameters_path)) {

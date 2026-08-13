@@ -23,13 +23,13 @@ Tracked article-side companions:
 - `docs/software_availability_contract.md`
 
 Setup/support figure correction plan:
-- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_SOURCE_MANIFEST.md`
-- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_FILE_PLAN.md`
-- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_ACCEPTANCE_CHECKLIST.md`
+- `SOURCE_WORKFLOW_REFERENCE
+- `SOURCE_WORKFLOW_REFERENCE
+- `SOURCE_WORKFLOW_REFERENCE
 
 Canonical forward runbook:
-- `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_REVISED_ARTICLE_WORKFLOW.md`
-- `SOURCE_WORKFLOW_ROOT/repro/run/HE2_FULL_HISTORY_REPAIR_FORWARD_PLAN.md`
+- `SOURCE_WORKFLOW_REFERENCE
+- `SOURCE_WORKFLOW_REFERENCE
 
 Article-side provenance refresh helper:
 - `MANUSCRIPT_ASSET_MANIFEST.json`
@@ -85,7 +85,7 @@ summaries, and cutoff-specific multivariate synthesis panels now use:
 
 - retained canonical-grid winners for `20210123` and `20211112`;
 - clean replays from
-  `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623`
+  `SOURCE_RUNTIME_REFERENCE
   for `20211221`, `20220511`, and `20221225`.
 
 Under this refreshed authority, `exAL-M-T1` has the lowest 28-day CRPS in all
@@ -131,7 +131,7 @@ That legacy script still relies on notebook-linearized state and hard-coded exte
 The representative selected-model refresh is now partially complete.
 
 Verified source run:
-- `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_multivar_keep`
+- `SOURCE_RUNTIME_REFERENCE
 
 Verified status:
 - `validation_status=pass`
@@ -140,7 +140,7 @@ Verified status:
 - posterior table exports are present
 
 The revised manuscript repo now contains a local copy of the representative selected-model artifacts under:
-- `SOURCE_ARTICLE_ROOT/artifacts/representative_selected_model_2022_12_25`
+- `SOURCE_ARTICLE_REFERENCE
 
 Those copied artifacts include:
 - `posterior_samples_valid.png`
@@ -322,7 +322,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 
 1. The four setup/support figures are now reproduced through the corrected cutoff-specific `v2` workflow.
    - Workflow-side review:
-     - `SOURCE_RUNTIME_ROOT/exal_m_t1_setup_support_by_cutoff_v2_20260516/review/`
+     - `SOURCE_RUNTIME_REFERENCE
    - Article-side mirror:
      - `artifacts/five_cutoff_setup_support/`
    - Representative manuscript promotion is governed by:
@@ -342,7 +342,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 2. `forecats.png` remains more delicate than the other setup figures, but the canonical `v2` path now stages bundle-native forecast inputs explicitly.
    - The workflow repo includes a dedicated reproducibility plan at:
      - `repro/FORECATS_INPUTS_AND_WEIGHTING_PLAN.md`
-   - The corrected cutoff-specific derivation anchors that figure to the CRPS-linked `exAL-M-T1` source manifest and the authoritative forecats/histfix bundles instead of the older generic paper-level copy.
+   - The corrected cutoff-specific derivation anchors that figure to the CRPS-linked `exAL-M-T1` source manifest and the authoritative forecats/long_history_support bundles instead of the older generic paper-level copy.
 
 3. The dry/wet regime figures and the appendix long-cycle figure are now regenerated from the representative selected-model support bundle.
    - They are locked to the same `2022-12-25 exAL-M-T1` selected-output authority as the representative synthesis figure.
@@ -392,7 +392,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 ## Provenance classification for the next phase
 
 ### Group A: keep as cutoff-specific setup/support figures
-These are now reproduced through the corrected `v2` per-cutoff family derived from the verified five-run `exAL-M-T1` bundles and the authoritative forecats/histfix bundle roots.
+These are now reproduced through the corrected `v2` per-cutoff family derived from the verified five-run `exAL-M-T1` bundles and the authoritative forecats/long_history_support bundle roots.
 - `fig:sanlorenzo`
 - `fig:covariates`
 - `fig:retrospectives`
@@ -450,7 +450,7 @@ The following policy is now adopted for the revised manuscript and should govern
 ## Recent selected-model workflow status
 
 A recent validated family of selected-model runs exists under:
-- `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/`
+- `SOURCE_RUNTIME_REFERENCE
 
 For all five manuscript cutoffs, the corresponding `exdqlm_multivar_keep` runs:
 - passed validation,
@@ -484,7 +484,7 @@ Resolved gaps from this audit:
 The high-level provenance inventory in this file is paired with the run-level
 artifact map and the workflow-side authority runbook:
 - `docs/exal_m_t1_artifact_run_map.md`
-- `SOURCE_WORKFLOW_ROOT/docs/current_authority_refresh_runbook.md`
+- `SOURCE_WORKFLOW_REFERENCE
 
 Use these files when:
 - identifying the authoritative source run for a given cutoff,

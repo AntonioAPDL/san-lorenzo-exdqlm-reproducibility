@@ -1,9 +1,9 @@
 campaign:
   campaign_id: he2_bayesian_publication_exdqlm_multivar_keep_partial_authority_refresh_20260623
   campaign_spec_id: he2partial20260623
-  artifact_root: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623
-  matrix_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/control/publication_relaunch_matrix
-  config_output_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/control/generated_configs
+  artifact_root: SOURCE_RUNTIME_REFERENCE
+  matrix_dir: SOURCE_RUNTIME_REFERENCE
+  config_output_dir: SOURCE_RUNTIME_REFERENCE
   cutoffs:
     - '20211221'
     - '20220511'

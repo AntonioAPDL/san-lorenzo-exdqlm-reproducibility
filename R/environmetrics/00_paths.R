@@ -197,13 +197,13 @@ FEATURE_TABLE_PRESENT <- nzchar(COVARIATE_FEATURES_PATH) && file.exists(COVARIAT
 # Core inputs
 COV_ELI_PATH <- resolve_covariate_path(
   "ENV_COV_ELI_PATH",
-  "LEGACY_EXAL_INPUT_ROOT/covariates/cov_1_ELI.csv",
+  "LEGACY_EXAL_INPUT_REFERENCE",
   "ELI covariate",
   allow_missing = FEATURE_TABLE_PRESENT
 )
 COV_ONI_PATH <- resolve_covariate_path(
   "ENV_COV_ONI_PATH",
-  "LEGACY_EXAL_INPUT_ROOT/covariates/cov_2_ONI.csv",
+  "LEGACY_EXAL_INPUT_REFERENCE",
   "ONI covariate",
   allow_missing = FEATURE_TABLE_PRESENT
 )

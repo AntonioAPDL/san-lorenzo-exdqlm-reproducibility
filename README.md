@@ -7,9 +7,10 @@ Synthesis of Hydrologic Products*.
 The repository is intentionally narrower than the live research
 workspace. It contains compact staged inputs, current manuscript-facing
 outputs, provenance, and the selected workflow code needed to inspect
-or rerun the reported case-study analysis. It does not contain raw
-climate-center archives, active runtime campaigns, local notebooks,
-poster drafts, or generated screening/audit outputs.
+or rerun the reported case-study analysis from model-ready inputs. It
+does not contain raw climate-center archives, raw covariate-retrieval
+workflows, active runtime campaigns, local notebooks, poster drafts, or
+generated screening/audit outputs.
 
 ## Quick Validation
 
@@ -26,9 +27,10 @@ absence of forbidden heavy runtime formats.
    manuscript-facing tables, figures, hashes, and provenance from the
    compact staged outputs in `outputs/expected/`.
 2. **Selected-model rerun support.** Use the selected R workflow,
-   configuration files, and staged input bundles in `data/staged/` to
-   rerun the reported exDQLM/DQLM case-study fits. This requires the
-   public CRAN package `exdqlm` and sufficient local compute.
+   configuration files, and model-ready staged input bundles in
+   `data/staged/` to rerun the reported exDQLM/DQLM case-study fits.
+   This requires the public CRAN package `exdqlm` and sufficient local
+   compute.
 3. **Raw archive reconstruction.** Not bundled. Reconstructing a new
    retrospective validation archive requires agency-specific historical
    products, version matching, spatial extraction, forecast-window
@@ -39,7 +41,7 @@ absence of forbidden heavy runtime formats.
 - `R/`: selected model, post-processing, and figure-generation code.
 - `scripts/`: orchestration, manifest, and validation scripts.
 - `config/`: selected publication and authority configuration files.
-- `data/staged/`: compact staged inputs used by the five cutoff cases.
+- `data/staged/`: compact model-ready inputs used by the five cutoff cases.
 - `outputs/expected/`: current manuscript-facing expected outputs and
   compact artifact bundles.
 - `figures/`: frozen manuscript figure files.
@@ -86,9 +88,10 @@ workspace:
 - `EXTERNAL_RUNTIME_SOURCE_ROOT`: external local runtime source tree used
   in legacy provenance notes.
 
-Exact source paths and export-time commits are preserved only in
+Export-time commits and source roles are preserved in
 `provenance/source_file_crosswalk.csv` and
-`provenance/runtime_source_crosswalk.csv`.
+`provenance/runtime_source_crosswalk.csv`; machine-specific paths are
+replaced by public placeholders.
 
 ## License Status
 

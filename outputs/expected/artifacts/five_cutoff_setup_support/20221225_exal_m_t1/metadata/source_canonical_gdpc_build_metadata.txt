@@ -1,1 +1,1 @@
-SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/metadata/gdpc_build_metadata.json
+SOURCE_WORKFLOW_REFERENCE

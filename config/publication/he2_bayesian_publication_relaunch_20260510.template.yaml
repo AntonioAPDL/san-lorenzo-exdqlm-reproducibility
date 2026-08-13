@@ -1,9 +1,9 @@
 campaign:
   campaign_id: he2_bayesian_publication_relaunch
   campaign_spec_id: he2pubgdpc1r1
-  artifact_root: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_bayesian_publication_relaunch_20260510
-  matrix_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_bayesian_publication_relaunch_20260510/control/publication_relaunch_matrix
-  config_output_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_bayesian_publication_relaunch_20260510/control/generated_configs
+  artifact_root: SOURCE_RUNTIME_REFERENCE
+  matrix_dir: SOURCE_RUNTIME_REFERENCE
+  config_output_dir: SOURCE_RUNTIME_REFERENCE
   cutoffs:
     - '20210123'
     - '20211112'

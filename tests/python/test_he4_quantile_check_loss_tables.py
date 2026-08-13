@@ -70,7 +70,7 @@ class He4QuantileCheckLossTableTests(unittest.TestCase):
                     {
                         "model_id": "dqlm_multivar_al_synth_keep",
                         "source_run": "current_featurecov_run",
-                        "selected_source_run": "selected_histfix_run",
+                        "selected_source_run": "selected_long_history_support_run",
                         "reuse_source_run_id": "reuse_featurecov_run",
                         "reused": True,
                         "source_type": "featurecov_cf1_eps_sweep",
@@ -85,7 +85,7 @@ class He4QuantileCheckLossTableTests(unittest.TestCase):
             )
             self.assertEqual(run_name, "reuse_featurecov_run")
             self.assertEqual(metadata["provenance_source_run"], "current_featurecov_run")
-            self.assertEqual(metadata["provenance_selected_source_run"], "selected_histfix_run")
+            self.assertEqual(metadata["provenance_selected_source_run"], "selected_long_history_support_run")
             self.assertEqual(metadata["provenance_reuse_source_run_id"], "reuse_featurecov_run")
             self.assertTrue(metadata["provenance_reused"])
 
@@ -94,7 +94,7 @@ class He4QuantileCheckLossTableTests(unittest.TestCase):
                     {
                         "model_id": "dqlm_multivar_al_synth_keep",
                         "source_run": "current_featurecov_run",
-                        "selected_source_run": "selected_histfix_run",
+                        "selected_source_run": "selected_long_history_support_run",
                         "reuse_source_run_id": "",
                         "reused": False,
                         "source_type": "featurecov_cf1_eps_sweep",
@@ -108,7 +108,7 @@ class He4QuantileCheckLossTableTests(unittest.TestCase):
                 "dqlm_multivar_al_synth_keep",
             )
             self.assertEqual(run_name, "current_featurecov_run")
-            self.assertEqual(metadata["provenance_selected_source_run"], "selected_histfix_run")
+            self.assertEqual(metadata["provenance_selected_source_run"], "selected_long_history_support_run")
         finally:
             shutil.rmtree(td, ignore_errors=True)
 

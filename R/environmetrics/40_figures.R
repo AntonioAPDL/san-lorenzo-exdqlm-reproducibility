@@ -326,7 +326,7 @@ gaussian_projection_mean_sd <- function(Ft, Mu, Sigma, context = "projection") {
 }
 
 profile_section("figures.elbo_traces", {
-  png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_ELBOS_DISC.png", width = 6000, height = 4000, res = 600)
+  png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   par(mfrow = c(1, 8), mar = c(2, 2, 2, 1), oma = c(0, 0, 3, 0))
 
   l <- -2500
@@ -1458,7 +1458,7 @@ safe_exps_range <- function(theta_obj, row, start_idx, end_idx, context = "exps.
   idx <- seq.int(as.integer(start_idx), as.integer(end_idx))
   safe_exps_index(theta_obj, row = row, idx = idx, context = context)
 }
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Allth_exal_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_95_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic Quantile:  exAL")
@@ -1690,7 +1690,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # Initialize the matrix
 q_exps <- matrix(NA_real_, nrow = 7, ncol=(ranges[1]))
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_exal_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_95_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic Quantile:  exAL")
@@ -1928,7 +1928,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # Initialize the matrix
 # q_exps <- matrix(NA_real_, nrow = 7, ncol=(ranges[1]))
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Allth_ndlm_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_95_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic Quantile: NDLM")
@@ -2146,7 +2146,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # Initialize the matrix
 # q_exps <- matrix(NA_real_, nrow = 7, ncol=(ranges[1]))
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_ndlm_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_95_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic Quantile: NDLM")
@@ -2371,7 +2371,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # Initialize the matrix
 # q_exps <- matrix(NA_real_, nrow = 7, ncol=(ranges[1]))
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/95th_exal_ndlm_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_95_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic 95th Quantile: exAL vs NDLM")
@@ -2505,7 +2505,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # Initialize the matrix
 # q_exps <- matrix(NA_real_, nrow = 7, ncol=(ranges[1]))
 #
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/50th_exal_ndlm_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 # Base plot
 plot.ts((new.theta.out_50_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic 50th Quantile: exAL vs NDLM")
@@ -2637,7 +2637,7 @@ idx_f <- ((iii+1)+1):((iii+1)+ranges[1])
 # q_exps <- matrix(NsA_real_, nrow = 7, ncol=(ranges[1]))
 
 # Base plot
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/5th_exal_ndlm_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 plot.ts((new.theta.out_5_exAL_synth_DISC$exps[2,idx_all]) * 0, ylim = c(-2.5, 2.5),
         xlab = " ", ylab = "log-flow", xaxt = "n", col = NA, lwd = 2, main = "Dynamic 5th Quantile: exAL vs NDLM")
 
@@ -2755,7 +2755,7 @@ dev.off()
 
 p <- 7
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_conv_VB_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mfrow = c(2, 7), mar = c(2, 2, 2, 1), oma = c(0, 0, 3, 0))
 
 colors <- c("forestgreen", "darkorange", "darkblue")
@@ -2928,7 +2928,7 @@ time_cuts <- resolve_time_cuts(
 )
 
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_ndlm_2012-2016_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 
 idx <- time_cuts[1]:time_cuts[2]
@@ -3029,7 +3029,7 @@ axis(1, at = tick_positions, labels = FALSE)
 text(x = tick_positions, y = par("usr")[3] - 0.025 * diff(par("usr")[3:4]), labels = tick_labels, srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
 dev.off()
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_ndlm_2017-2019_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 
 idx <- time_cuts[3]:time_cuts[4]
@@ -3131,7 +3131,7 @@ text(x = tick_positions, y = par("usr")[3] - 0.025 * diff(par("usr")[3:4]), labe
 
 dev.off()
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_exal_ndlm_2012-2016_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 par(mfrow = c(1, 1), mar = c(4, 4, 2, 1), oma = c(4, 0, 0, 0))
 
@@ -3204,7 +3204,7 @@ mtext("Forest Green: 50th Quantile | Dark Red: 5th Quantile | Dark Blue: 95th Qu
 dev.off()
 
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_exal_2012-2016_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 par(mfrow = c(1, 1), mar = c(4, 4, 2, 1), oma = c(4, 0, 0, 0))
 
@@ -3270,7 +3270,7 @@ mtext("Forest Green: 50th Quantile | Dark Red: 5th Quantile | Dark Blue: 95th Qu
 
 dev.off()
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_exal_ndlm_2017-2019_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 par(mfrow = c(1, 1), mar = c(4, 4, 2, 1), oma = c(4, 0, 0, 0))
 
@@ -3336,7 +3336,7 @@ text(x = tick_positions, y = par("usr")[3] - 0.025 * diff(par("usr")[3:4]), labe
 
 dev.off()
 
-# png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All3_exal_ndlm_2017-2019_DISC.png", width = 6000, height = 4000, res = 600)
+# png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
 par(mar = c(4, 4, 2, 1) + 0.1)
 par(mfrow = c(1, 1), mar = c(4, 4, 2, 1), oma = c(4, 0, 0, 0))
 
@@ -3419,7 +3419,7 @@ yy <- (yy-mean(yy))/sd(yy)
 lines(yy, col = 'green')
 
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_ndlm_2018-2021_DISC.png", width = 6000, height = 4000, res = 60)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 60)
 idx <- time_cuts[3]:time_cuts[4]
 percentiles <- c(0.025, 0.5, 0.975)
 ######################################################################################
@@ -3631,7 +3631,7 @@ profile_section("figures.components_1991_2022", {
 
   idx <- ceiling(TT/10):TT
   components <- c(1:dim(q_d_50)[1])
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_1991_2022_", 1:length(components), ".png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:length(components), ".png")
 
   for (i in 1:length(components)) {
     par(mar = c(4, 4, 2, 1) + 0.1)
@@ -3649,7 +3649,7 @@ profile_section("figures.agg_disc_1991_2022", {
 
   num_ticks <- 8
   idx <- ceiling(TT/10):TT
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_1991_2022_", 1:J, ".png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:J, ".png")
 
   for (j in 1:J) {
 png(figure_names[j], width = 6000, height = 4000, res = 600)  
@@ -3717,7 +3717,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   tick_labels <- format(selected_dates[match(tick_positions, idx)], "%Y-%m-%d")
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_1991_2022_TRANSFER50_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-2,2), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -3732,7 +3732,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-   png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_1991_2022_TRANSFER05_DISC.png", width = 6000, height = 4000, res = 600)
+   png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
   lines(idx, q_d_05[component, idx, 2], col = "darkred", lwd = 1)
@@ -3746,7 +3746,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_1991_2022_TRANSFER95_DISC.png", width = 6000, height = 4000, res = 600)
+png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -3794,7 +3794,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   tick_labels <- format(selected_dates[match(tick_positions, idx)], "%Y-%m-%d")
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2012_2016_TRANSFER50_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-2,2), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -3809,7 +3809,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2012_2016_TRANSFER05_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -3824,7 +3824,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2012_2016_TRANSFER95_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -3996,7 +3996,7 @@ profile_section("figures.components_2012_2016", {
   # idx <- ceiling(TT/10):TT
   idx <- time_cuts[1]:time_cuts[2]
   components <- c(1, 2, 4, 6, 8, 9:dim(q_d_50)[1])
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2012_2016_", 1:length(components), "_DISC.png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:length(components), "_DISC.png")
   for (i in 1:length(components)) {
     par(mar = c(4, 4, 2, 1) + 0.1)
     plot_quantile_component(
@@ -4013,7 +4013,7 @@ profile_section("figures.agg_disc_2012_2016", {
 
   num_ticks <- 8
   idx <- time_cuts[1]:time_cuts[2]
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2012_2016_", 1:J, ".png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:J, ".png")
 
   for (j in 1:J) {
 png(figure_names[j], width = 6000, height = 4000, res = 600)  
@@ -4209,7 +4209,7 @@ profile_section("figures.components_2018_2020", {
   # idx <- ceiling(TT/10):TT
   idx <- time_cuts[3]:time_cuts[4]
   components <- c(1:dim(q_d_50)[1])
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2018_2020_", 1:length(components), "_DISC.png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:length(components), "_DISC.png")
   for (i in 1:length(components)) {
     par(mar = c(4, 4, 2, 1) + 0.1)
     plot_quantile_component(
@@ -4226,7 +4226,7 @@ profile_section("figures.agg_disc_2018_2020", {
 
   num_ticks <- 8
   idx <- time_cuts[3]:time_cuts[4]
-  figure_names <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2018_2020_", 1:J, ".png")
+  figure_names <- paste0("SOURCE_WORKFLOW_REFERENCE", 1:J, ".png")
 
   for (j in 1:J) {
 png(figure_names[j], width = 6000, height = 4000, res = 600)  
@@ -4293,7 +4293,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   }
   
   tick_labels <- format(selected_dates[match(tick_positions, idx)], "%Y-%m-%d")
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2017_2019_TRANSFER50_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-2,2), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -4308,7 +4308,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_22017_2019_TRANSFER05_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -4323,7 +4323,7 @@ plot_quantile_component <- function(q_d_50, q_d_05, q_d_95, q_d_20, q_d_35, q_d_
   
   dev.off() 
 
-     png("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Component_2017_2019_TRANSFER95_DISC.png", width = 6000, height = 4000, res = 600)
+     png("SOURCE_WORKFLOW_REFERENCE", width = 6000, height = 4000, res = 600)
   
   plot(idx, 0*Y[1, idx], type = "l", col = "gray", lwd = 2, ylim=c(-1.3,2.6), 
        xlab = " ", ylab = "log-flow", main = "Cummulative Transfer  -  1991-2022", xaxt = "n")
@@ -4476,7 +4476,7 @@ p1 <- ggplot(plot_data_5_50_95, aes(x = epsilon, y = mean_k_lb, color = Quantile
   scale_color_manual(values = c("darkgreen", "darkred", "darkblue"))
 
 # Save the plot for 5th, 50th, and 95th quantiles
-ggsave(filename = "SOURCE_WORKFLOW_ROOT/tef_5_50_95_plot_DISC.png", plot = p1, width = 8, height = 6, dpi = 900)
+ggsave(filename = "SOURCE_WORKFLOW_REFERENCE", plot = p1, width = 8, height = 6, dpi = 900)
 
 # Plot for 20th quantile
 p2 <- ggplot(plot_data_20, aes(x = epsilon, y = mean_k_lb, color = Quantile)) +
@@ -4497,7 +4497,7 @@ p2 <- ggplot(plot_data_20, aes(x = epsilon, y = mean_k_lb, color = Quantile)) +
   scale_color_manual(values = c("darkorange"))
 
 # Save the plot for 20th quantile
-ggsave(filename = "SOURCE_WORKFLOW_ROOT/tef_20_plot_DISC.png", plot = p2, width = 8, height = 6, dpi = 900)
+ggsave(filename = "SOURCE_WORKFLOW_REFERENCE", plot = p2, width = 8, height = 6, dpi = 900)
 
 
 dim(samp.theta_50_exAL_synth_DISC$samp_theta)
@@ -4709,7 +4709,7 @@ exp_m80 <- colMeans((exp_y_post_80))
 idx <- safe_time_index(TT - 500, TT, TT, context = "40_figures.tt_minus_500")
 n.samp <- min(n.samp, dim(samp.theta_50_exAL_synth_DISC$samp_theta)[3])
 ylim_range <- c(0, 7)
-output_dir <- "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce"
+output_dir <- "SOURCE_WORKFLOW_REFERENCE"
 
 # Create a function for plotting posterior predictive samples with legends and labels (without the new.theta.out_p0_exAL_synth$exps)
 plot_posterior_samples <- function(y_post, q, quantile_label, p0, color_post, color_quantile, ylim_range, idx) {
@@ -6189,7 +6189,7 @@ p <- ggplot(flow_data, aes(x = Date, y = Flow)) +
 print(p)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/usgs.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p,
   width = 12,
   height = 6,
@@ -6272,7 +6272,7 @@ p_facets <- ggplot(df_long, aes(x = Date, y = Value, color = Variable)) +
 print(p_facets)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/precip_soilmoisture_climatePC1_faceted_labeled.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_facets,
   width = 12,
   height = 8,
@@ -6548,7 +6548,7 @@ p_combined <- p_glofas / p_nws + plot_layout(ncol = 1)
 print(p_combined)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/retrospective_log_discharge_plot_faceted.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_combined,
   width = 12,
   height = 8,
@@ -6803,7 +6803,7 @@ p <- add_jan9_flood_marker(p, jan9_label_y)
 print(p)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/forecats.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p,
   width = 12,
   height = 6,
@@ -7017,7 +7017,7 @@ p_post <- add_jan9_flood_marker(p_post, jan9_label_y)
 print(p_post)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/posterior_samples.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_post,
   width = 12,
   height = 6,
@@ -7182,7 +7182,7 @@ p_post <- add_jan9_flood_marker(p_post, jan9_label_y)
 print(p_post)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/posterior_samples_counter.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_post,
   width = 12,
   height = 6,
@@ -7347,7 +7347,7 @@ print(p)
 
 # Save if desired
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_2017-2019_DISC.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p, width = 12, height = 6, units = "in", dpi = 900
 )
 
@@ -7509,7 +7509,7 @@ print(p)
 
 # Save if desired
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_2012-2016_DISC.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p, width = 12, height = 6, units = "in", dpi = 900
 )
 
@@ -7696,7 +7696,7 @@ print(p)
 
 # # Save if desired
 # ggsave(
-#   filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/All_exal_2012-2016_DISC.png",
+#   filename = "SOURCE_WORKFLOW_REFERENCE",
 #   plot = p, width = 12, height = 6, units = "in", dpi = 900
 # )
 
@@ -7826,7 +7826,7 @@ plot_component_quantiles <- function(
 
   print(p)
   if (!is.null(filename)) {
-    ff <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/", filename)
+    ff <- paste0("SOURCE_WORKFLOW_REFERENCE", filename)
     ggsave(ff, plot = p, width = 12, height = 6, units = "in", dpi = 350)
   }
 }
@@ -7994,7 +7994,7 @@ plot_component_quantiles <- function(
   
   print(p)
   if (!is.null(filename)) {
-    ff <- paste0("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/",filename)
+    ff <- paste0("SOURCE_WORKFLOW_REFERENCE",filename)
     ggsave(ff, plot = p, width = 12, height = 6, units = "in", dpi = 350)
   }
 }
@@ -8182,7 +8182,7 @@ p1 <- make_discrepancy_plot(
   contract_key = "agg_disc_1991_2022_1"
 )
 p1
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_1991_2022_1.png", p1, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p1, width = 12, height = 6, units = "in", dpi = 900)
 
 # NWS-USGS (if J==2)
 p2 <- make_discrepancy_plot(
@@ -8192,7 +8192,7 @@ p2 <- make_discrepancy_plot(
   contract_key = "agg_disc_1991_2022_2"
 )
 p2
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_1991_2022_2.png", p2, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p2, width = 12, height = 6, units = "in", dpi = 900)
 
 
 idx <- time_cuts[1]:time_cuts[2]
@@ -8306,7 +8306,7 @@ p1 <- make_discrepancy_plot(
   contract_key = "agg_disc_2012_2016_1"
 )
 p1
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2012_2016_1.png", p1, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p1, width = 12, height = 6, units = "in", dpi = 900)
 
 # NWS-USGS (if J==2)
 p2 <- make_discrepancy_plot(
@@ -8317,7 +8317,7 @@ p2 <- make_discrepancy_plot(
   contract_key = "agg_disc_2012_2016_2"
 )
 p2
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2012_2016_2.png", p2, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p2, width = 12, height = 6, units = "in", dpi = 900)
 
 
 idx <- time_cuts[3]:time_cuts[4]
@@ -8431,7 +8431,7 @@ p1 <- make_discrepancy_plot(
   contract_key = "agg_disc_2017_2019_1"
 )
 p1
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2017_2019_1.png", p1, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p1, width = 12, height = 6, units = "in", dpi = 900)
 
 # NWS-USGS (if J==2)
 p2 <- make_discrepancy_plot(
@@ -8442,11 +8442,11 @@ p2 <- make_discrepancy_plot(
   contract_key = "agg_disc_2017_2019_2"
 )
 p2
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2017_2019_2.png", p2, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p2, width = 12, height = 6, units = "in", dpi = 900)
 
 # Keep legacy filename aliases in sync with the same fitted-overlay payload.
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2018_2020_1.png", p1, width = 12, height = 6, units = "in", dpi = 900)
-ggsave("SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/Agg_disc_2018_2020_2.png", p2, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p1, width = 12, height = 6, units = "in", dpi = 900)
+ggsave("SOURCE_WORKFLOW_REFERENCE", p2, width = 12, height = 6, units = "in", dpi = 900)
 
 if (exists("OUT_DIR", inherits = TRUE) && length(agg_disc_contract_rows) > 0L) {
   agg_contract_df <- dplyr::bind_rows(agg_disc_contract_rows)
@@ -8918,7 +8918,7 @@ p_post <- add_jan9_flood_marker(p_post, jan9_label_y)
 print(p_post)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/posterior_samples_valid.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_post,
   width = 12,
   height = 6,
@@ -9093,7 +9093,7 @@ p_post <- add_jan9_flood_marker(p_post, jan9_label_y)
 print(p_post)
 
 ggsave(
-  filename = "SOURCE_WORKFLOW_ROOT/Environmetrics_reproduce/posterior_samples_counter_valid.png",
+  filename = "SOURCE_WORKFLOW_REFERENCE",
   plot = p_post,
   width = 12,
   height = 6,

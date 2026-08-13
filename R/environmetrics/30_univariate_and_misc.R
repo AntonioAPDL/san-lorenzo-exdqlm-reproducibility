@@ -67,7 +67,7 @@ max_iter <- 800
 fast <- 0
 
 write.csv(timestamps, TIMESTAMPS_CSV, row.names = FALSE)
-# timestamps_loaded <- read.csv("SOURCE_WORKFLOW_ROOT/timestamps.csv")
+# timestamps_loaded <- read.csv("SOURCE_WORKFLOW_REFERENCE")
 # timestamps_loaded$Date <- as.Date(timestamps_loaded$Date)
 # head(timestamps_loaded)
 
@@ -963,11 +963,11 @@ plot(principal_components_df$time,principal_components_df$Static_PCA, type = 'li
 # ###########################################################################################
 # ####################################### Forecasts ######################################### 
 # ###########################################################################################
-# nws_forecast <- read.csv('SOURCE_WORKFLOW_ROOT/nws_forecast.csv')
+# nws_forecast <- read.csv('SOURCE_WORKFLOW_REFERENCE')
 # OBSOLETE: legacy log-log forecast transform removed; use the scale-contract bridge.
 # num_ens_nws <- dim(nws_forecast)[2]-1
 
-# glofas_forecast <- read.csv('SOURCE_WORKFLOW_ROOT/weighted_time_series.csv')
+# glofas_forecast <- read.csv('SOURCE_WORKFLOW_REFERENCE')
 # glofas_forecast$target_date <- as.Date(glofas_forecast$target_date)
 # specific_date <- as.Date("2022-12-26")
 # glofas_forecast <- glofas_forecast[glofas_forecast$target_date >= specific_date, ]
@@ -999,7 +999,7 @@ plot(principal_components_df$time,principal_components_df$Static_PCA, type = 'li
 # #########
 # ## PPT ##
 # #########
-# file_path <- "SOURCE_WORKFLOW_ROOT/prism_precipitation_santa_cruz_1987_2023.csv"
+# file_path <- "SOURCE_WORKFLOW_REFERENCE"
 # ppt_data <- read_csv(file_path, show_col_types = FALSE)
 # ppt_data$Date <- as.Date(ppt_data$Date)
 # colnames(ppt_data) <- c('time','ppt')
@@ -1012,7 +1012,7 @@ plot(principal_components_df$time,principal_components_df$Static_PCA, type = 'li
 # ##########
 # ## SOIL ##
 # ##########
-# csv_file_path <- "SOURCE_WORKFLOW_ROOT/soil_moisture_data/soil_moisture_big_trees_daily_avg_1987_2023.csv"
+# csv_file_path <- "SOURCE_WORKFLOW_REFERENCE"
 # soil_moisture_data <- read.csv(csv_file_path)
 # soil_moisture_data$Date <- as.Date(soil_moisture_data$Date)
 # colnames(soil_moisture_data) <- c('time','soil')
@@ -1025,7 +1025,7 @@ plot(principal_components_df$time,principal_components_df$Static_PCA, type = 'li
 # #########
 # ## PCA ##
 # #########
-# components_file_path <- "SOURCE_WORKFLOW_ROOT/pca.csv"
+# components_file_path <- "SOURCE_WORKFLOW_REFERENCE"
 # principal_components_df <- read_csv(components_file_path, show_col_types = FALSE)
 # colnames(principal_components_df) <- c('time','Static_PCA')
 # X_pca <- principal_components_df[principal_components_df$time <= '2022-12-25',]
@@ -1046,7 +1046,7 @@ plot(principal_components_df$time,principal_components_df$Static_PCA, type = 'li
 # #############
 # ## Retrosp ##
 # #############
-# data_path <- "SOURCE_WORKFLOW_ROOT/retros_2022-12-25.csv"
+# data_path <- "SOURCE_WORKFLOW_REFERENCE"
 # streamflow_data <- read_csv(data_path, show_col_types = FALSE)
 # time_series_matrix <- as.matrix(streamflow_data[, c('USGS', 'GloFAS', 'NWS3.0')])
 # timestamps <- as.Date(streamflow_data$Date)

@@ -1,8 +1,9 @@
 # Staged Data
 
 `data/staged/` contains compact, cutoff-specific inputs used by the
-publication workflow. Filenames are intentionally descriptive; original
-source paths and hashes are recorded in
+publication workflow. These are model-ready inputs, not raw
+climate-center retrieval archives. Filenames are intentionally
+descriptive; source roles and hashes are recorded in
 `provenance/source_file_crosswalk.csv`.
 
 The five forecast-origin folders are:

@@ -1,20 +1,20 @@
 {
   "command": [
     "/home/jaguir26/python39/bin/python3",
-    "SOURCE_ARTICLE_ROOT/scripts/refresh_current_model_output_support_figures.py",
+    "SOURCE_ARTICLE_REFERENCE",
     "--article-root",
     "SOURCE_ARTICLE_ROOT",
     "--workflow-root",
     "SOURCE_WORKFLOW_ROOT",
     "--multivar-runtime-root",
-    "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524",
+    "SOURCE_RUNTIME_REFERENCE",
     "--multivar-support-run-root",
-    "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_historical_support_replay_20260517/runs/multimodel_20220511_v8_he2pubgdpc1r1_exdqlm_multivar_keep_historical_support_replay",
+    "SOURCE_RUNTIME_REFERENCE",
     "--univar-runtime-root",
-    "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_univar_all_cutoffs_sharedspec_20260516"
+    "SOURCE_RUNTIME_REFERENCE"
   ],
   "returncode": 1,
-  "stdout": "",
-  "stderr": "Traceback (most recent call last):\n  File \"SOURCE_ARTICLE_ROOT/scripts/refresh_current_model_output_support_figures.py\", line 329, in <module>\n    main()\n  File \"SOURCE_ARTICLE_ROOT/scripts/refresh_current_model_output_support_figures.py\", line 288, in main\n    raise FileNotFoundError(\nFileNotFoundError: Missing both canonical multivariate fit artifacts and the retained support replay/state-summary contract: canonical=SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524/runs/multimodel_20220511_v8_he2grid_c02_eps060_exdqlm_multivar_keep support=SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_historical_support_replay_20260517/runs/multimodel_20220511_v8_he2pubgdpc1r1_exdqlm_multivar_keep_historical_support_replay state_summary=SOURCE_ARTICLE_ROOT/artifacts/historical_support_from_current_models/figures/cache/historical_support_state_summaries.rds\n",
-  "status": "skipped"
+  "status": "skipped",
+  "stderr": "Traceback (most recent call last):\n  File \"SOURCE_ARTICLE_REFERENCE\", line 329, in <module>\n    main()\n  File \"SOURCE_ARTICLE_REFERENCE\", line 288, in main\n    raise FileNotFoundError(\nFileNotFoundError: Missing both canonical multivariate fit artifacts and the retained support replay/state-summary contract: canonical=SOURCE_RUNTIME_REFERENCE support=SOURCE_RUNTIME_REFERENCE state_summary=SOURCE_ARTICLE_REFERENCE\n",
+  "stdout": ""
 }

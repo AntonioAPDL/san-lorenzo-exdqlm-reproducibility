@@ -35,6 +35,9 @@ REQUIRED = [
     "tables/generated_tex/benchmark_crps_main_table.tex",
     "figures/manuscript_context/site_context_usgs.png",
     "outputs/expected/artifacts/he2_publication_freeze/he2_bayesian_publication_manifest.csv",
+    "provenance/model_inputs_by_cutoff.md",
+    "provenance/climate_product_versioning.md",
+    "provenance/public_release_hygiene.md",
     "provenance/source_file_crosswalk.csv",
     "provenance/runtime_source_crosswalk.csv",
     "data/SHA256SUMS.txt",
@@ -58,18 +61,62 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 TEXT_FILENAMES = {"Makefile", "LICENSE", ".gitignore"}
-ALLOWED_LOCAL_PATH_FILES = {
-    "provenance/source_file_crosswalk.csv",
-    "provenance/runtime_source_crosswalk.csv",
-}
 LOCAL_PATH_MARKERS = ("/" + "data/muscat_data/", "/" + "data/jaguir26/")
 STALE_TEXT_MARKERS = (
     "https://github.com/AntonioAPDL/" + "Project1",
     "PROJECT1" + "_URL",
     "chat" + "gpt",
     "co" + "dex",
+    "open" + "ai",
+    "cl" + "aude",
+    "gem" + "ini",
+    "co" + "pilot",
+    "large " + "language " + "model",
+    "language " + "model",
+    "l" + "lm",
     "ai" + "-generated",
+    "ai" + " generated",
     "ai " + "wording",
+    "prompt " + "for",
+)
+FORBIDDEN_PUBLIC_PATHS = {
+    "config/publication/unified_run.template.yaml",
+    "config/publication/exdqlm_multivar_keep_epsilon_discount_grid_20260524.csv",
+    "provenance/workflow/docs/current_authority_refresh_runbook.md",
+    "provenance/workflow/docs/canonical_gdpc_subset6_noi_soi_espi_pna_whwp_amo_20260527.md",
+    "provenance/workflow/repro/GLOFAS_HARMONIZATION_QA_SPEC.md",
+    "provenance/workflow/repro/GLOFAS_OPERATIONAL_MEDIUMRANGE_WORKFLOW_RUNBOOK.md",
+    "provenance/workflow/repro/NWS_NWM_GLOFAS_DATA_AUDIT_PLAN.md",
+    "provenance/workflow/repro/NWM_RETROSPECTIVE_EXTRACTION_WORKSTREAM_TRACKER.md",
+    "provenance/workflow/repro/GEFS_NWM_FORECAST_AUDIT_TRACKER.md",
+    "provenance/workflow/repro/run/CANONICAL_GDPC_IMPLEMENTATION_TRACKER_20260509.md",
+    "provenance/workflow/repro/run/CANONICAL_GDPC_MASTER_COVARIATE_REPORT_20260509.md",
+    "provenance/workflow/repro/run/CANONICAL_GDPC_MASTER_PIPELINE_RUNBOOK_20260509.md",
+}
+PUBLIC_METADATA_PREFIXES = (
+    "README.md",
+    "CITATION.cff",
+    "LICENSE",
+    "Makefile",
+    "config/",
+    "data/",
+    "manuscript/",
+    "outputs/",
+    "provenance/",
+    "tables/",
+)
+INTERNAL_COVARIATE_MARKERS = (
+    "noisy" + "_blend",
+    "observed" + "_blend",
+    "tail" + "_blend",
+    "handoff" + "_forecasts",
+    "source" + "_native_tranche",
+    "deterministic" + "_climate_blend",
+    "GEFS" + "_NWM_FORECAST_AUDIT_TRACKER",
+    "CANONICAL" + "_GDPC_MASTER_PIPELINE",
+    "hist" + "fix",
+    "legacy" + "_log_ready",
+    "selected" + "_window_splice",
 )
 
 
@@ -90,6 +137,9 @@ def main() -> int:
     for rel in REQUIRED:
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
+    for rel in FORBIDDEN_PUBLIC_PATHS:
+        if (ROOT / rel).exists():
+            errors.append(f"forbidden internal export file: {rel}")
 
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
@@ -105,11 +155,15 @@ def main() -> int:
             except UnicodeDecodeError:
                 continue
             lower_text = text.lower()
-            if rel not in ALLOWED_LOCAL_PATH_FILES and any(marker in text for marker in LOCAL_PATH_MARKERS):
+            if any(marker in text for marker in LOCAL_PATH_MARKERS):
                 errors.append(f"local absolute path outside provenance crosswalk: {rel}")
             for marker in STALE_TEXT_MARKERS:
                 if marker.lower() in lower_text:
                     errors.append(f"stale/internal marker {marker!r} in {rel}")
+            if rel.startswith(PUBLIC_METADATA_PREFIXES):
+                for marker in INTERNAL_COVARIATE_MARKERS:
+                    if marker.lower() in lower_text:
+                        errors.append(f"internal covariate-construction marker {marker!r} in {rel}")
 
     manifest = ROOT / "data/SHA256SUMS.txt"
     if manifest.exists():

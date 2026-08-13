@@ -9,7 +9,7 @@ This file locks the reproducible `exAL-M-T1` source set used by the revised arti
 It is the run-level companion to:
 - `docs/figure_table_provenance.md`
 - `MANUSCRIPT_ASSET_MANIFEST.json`
-- `SOURCE_WORKFLOW_ROOT/docs/current_authority_refresh_runbook.md`
+- `SOURCE_WORKFLOW_REFERENCE
 
 Important transition note:
 - the main HE2 benchmark authority now combines the two retained canonical-grid winners for `20210123` and `20211112` with three clean `20260623` replays for `20211221`, `20220511`, and `20221225`;
@@ -54,11 +54,11 @@ These local copies are derived from the verified workflow replay roots and shoul
 
 | Cutoff | Local frozen copy | Authority run root | Authority CRPS source | Status |
 |---|---|---|---|---|
-| `2021-01-23` | `artifacts/five_cutoff_crps_validation_sources/20210123_exal_m_t1/` | `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524/runs/multimodel_20210123_v8_he2grid_c04_eps365_exdqlm_multivar_keep` | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.13971` |
-| `2021-11-12` | `artifacts/five_cutoff_crps_validation_sources/20211112_exal_m_t1/` | `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524/runs/multimodel_20211112_v8_he2grid_c04_eps365_exdqlm_multivar_keep` | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.04724` |
-| `2021-12-21` | `artifacts/five_cutoff_crps_validation_sources/20211221_exal_m_t1/` | `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20211221_v8_he2partial20260623_exdqlm_multivar_keep` | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.26045` |
-| `2022-05-11` | `artifacts/five_cutoff_crps_validation_sources/20220511_exal_m_t1/` | `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20220511_v8_he2partial20260623_exdqlm_multivar_keep` | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.02273` |
-| `2022-12-25` | `artifacts/five_cutoff_crps_validation_sources/20221225_exal_m_t1/` | `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep` | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.53806` |
+| `2021-01-23` | `artifacts/five_cutoff_crps_validation_sources/20210123_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.13971` |
+| `2021-11-12` | `artifacts/five_cutoff_crps_validation_sources/20211112_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.04724` |
+| `2021-12-21` | `artifacts/five_cutoff_crps_validation_sources/20211221_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.26045` |
+| `2022-05-11` | `artifacts/five_cutoff_crps_validation_sources/20220511_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.02273` |
+| `2022-12-25` | `artifacts/five_cutoff_crps_validation_sources/20221225_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.53806` |
 
 ## 3. Representative selected-model bundle
 

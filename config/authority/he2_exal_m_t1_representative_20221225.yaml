@@ -22,10 +22,10 @@ authority:
     - "95"
   score_scale: "log_cms_plus1"
   figure_scale: "log1p_cms"
-  runtime_root: "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623"
+  runtime_root: "SOURCE_RUNTIME_REFERENCE"
   run_id: "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
-  runtime_run_root: "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
-  runtime_output_root: "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep/post/outputs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep"
+  runtime_run_root: "SOURCE_RUNTIME_REFERENCE"
+  runtime_output_root: "SOURCE_RUNTIME_REFERENCE"
   input_bundle_contract:
     bundle_artifact_root: "STAGED_INPUT_BUNDLE_ROOT"
     bundle_run_id: "20260510_publication_shared_r01"

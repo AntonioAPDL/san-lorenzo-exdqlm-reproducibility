@@ -28,12 +28,12 @@ Current selected `exAL-M-T1` winner manifest:
 
 Current HE3 ablation runtime root:
 
-- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608`
+- `SOURCE_RUNTIME_REFERENCE
 
 Current HE3 report bundle:
 
-- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_summary.md`
-- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_wide.csv`
+- `SOURCE_RUNTIME_REFERENCE
+- `SOURCE_RUNTIME_REFERENCE
 
 Current frozen article artifacts:
 

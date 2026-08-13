@@ -137,7 +137,7 @@ Archival caveat:
 
 ## Outputs
 
-- manifest: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_manifest.csv`
-- inputs: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_inputs.csv`
-- alignment: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_alignment.csv`
+- manifest: `SOURCE_WORKFLOW_REFERENCE
+- inputs: `SOURCE_WORKFLOW_REFERENCE
+- alignment: `SOURCE_WORKFLOW_REFERENCE
 

@@ -6,4 +6,4 @@ Refresh script:
 - `scripts/refresh_he2_manifest_snapshot.py`
 
 Canonical workflow source:
-- `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest`
+- `SOURCE_WORKFLOW_REFERENCE

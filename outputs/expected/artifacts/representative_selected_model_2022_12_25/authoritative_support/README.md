@@ -10,7 +10,7 @@ Large compact support CSV/RDS files are intentionally not persisted in this Over
 
 - run id: `multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep`
 - cutoff: `2022-12-25`
-- runtime output root: `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623/runs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep/post/outputs/multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep`
+- runtime output root: `SOURCE_RUNTIME_REFERENCE
 
 Refresh entrypoint:
 - `scripts/refresh_authoritative_selected_model_support_figures.py`

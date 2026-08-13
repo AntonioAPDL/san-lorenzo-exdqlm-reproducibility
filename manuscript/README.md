@@ -19,7 +19,7 @@ This repository is the submission-facing freeze of the revised manuscript, its m
 For any future HE2 publication-authority replacement, start from the workflow
 runbook:
 
-- `SOURCE_WORKFLOW_ROOT/docs/current_authority_refresh_runbook.md`
+- `SOURCE_WORKFLOW_REFERENCE
 
 Authority promotion is workflow-first. This article repo snapshots the promoted
 manifest, generated tables, and figures after the workflow overlay and

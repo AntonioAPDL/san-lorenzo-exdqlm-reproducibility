@@ -1,9 +1,9 @@
 campaign:
   campaign_id: he2_table1_targeted_repair_20260612
   campaign_spec_id: he2tbl1fix20260612
-  artifact_root: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612
-  matrix_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612/control/publication_relaunch_matrix
-  config_output_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612/control/generated_configs
+  artifact_root: SOURCE_RUNTIME_REFERENCE
+  matrix_dir: SOURCE_RUNTIME_REFERENCE
+  config_output_dir: SOURCE_RUNTIME_REFERENCE
   cutoffs:
     - '20210123'
     - '20211112'

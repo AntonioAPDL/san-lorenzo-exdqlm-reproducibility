@@ -46,14 +46,14 @@ unified_resolve_bundle_usgs_daily_path <- function(bundle_meta_path) {
   }
 
   meta_usgs_rel <- ""
-  histfix_usgs_path <- ""
+  long_history_support_usgs_path <- ""
   if (is.list(meta)) {
     if (is.list(meta$paths) && is.character(meta$paths$usgs_daily) && nzchar(meta$paths$usgs_daily)) {
       meta_usgs_rel <- as.character(meta$paths$usgs_daily[[1L]])
     }
-    if (is.list(meta$histfix) && is.character(meta$histfix$usgs_daily_source_path) &&
-        nzchar(meta$histfix$usgs_daily_source_path)) {
-      histfix_usgs_path <- as.character(meta$histfix$usgs_daily_source_path[[1L]])
+    if (is.list(meta$long_history_support) && is.character(meta$long_history_support$usgs_daily_source_path) &&
+        nzchar(meta$long_history_support$usgs_daily_source_path)) {
+      long_history_support_usgs_path <- as.character(meta$long_history_support$usgs_daily_source_path[[1L]])
     }
   }
 
@@ -74,9 +74,9 @@ unified_resolve_bundle_usgs_daily_path <- function(bundle_meta_path) {
     }
   }
 
-  histfix_path <- unified_first_existing_path(histfix_usgs_path)
-  if (nzchar(histfix_path)) {
-    return(list(path = histfix_path, origin = "bundle_histfix_source"))
+  long_history_support_path <- unified_first_existing_path(long_history_support_usgs_path)
+  if (nzchar(long_history_support_path)) {
+    return(list(path = long_history_support_path, origin = "bundle_long_history_support_source"))
   }
 
   list(path = "", origin = "")
