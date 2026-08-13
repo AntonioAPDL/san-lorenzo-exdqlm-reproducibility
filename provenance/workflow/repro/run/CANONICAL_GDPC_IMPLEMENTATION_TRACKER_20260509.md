@@ -1,7 +1,7 @@
 # Canonical GDPC Implementation Tracker
 
 Date: 2026-05-09
-Owner: Codex + Antonio
+Owner: Antonio
 Status: Source acquisition and daily post-processing implemented; GDPC fit and workflow rewiring still pending.
 
 ## Goal
@@ -37,15 +37,15 @@ This phase therefore exists to:
 ## Repos In Scope
 
 Workflow repo root:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd`
+- `SOURCE_WORKFLOW_ROOT`
 
 Article repo root:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2`
+- `SOURCE_ARTICLE_ROOT`
 
 Primary planning documents already in place:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_GDPC_MASTER_COVARIATE_REPORT_20260509.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/HE2_FULL_HISTORY_REPAIR_FORWARD_PLAN.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2/docs/manuscript_revision_checklist.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_GDPC_MASTER_COVARIATE_REPORT_20260509.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/HE2_FULL_HISTORY_REPAIR_FORWARD_PLAN.md`
+- `SOURCE_ARTICLE_ROOT/docs/manuscript_revision_checklist.md`
 
 ## Locked Decisions
 
@@ -109,9 +109,9 @@ These decisions are locked for the GDPC implementation phase unless Antonio expl
 ### 1. Current workflow consumes a frozen factor artifact
 
 Evidence paths:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/unified/stages/stage_data_prep_shared.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/disc_w/03_covariates_standardize.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/environmetrics/10_data_inputs.R`
+- `SOURCE_WORKFLOW_ROOT/R/unified/stages/stage_data_prep_shared.R`
+- `SOURCE_WORKFLOW_ROOT/R/disc_w/03_covariates_standardize.R`
+- `SOURCE_WORKFLOW_ROOT/R/environmetrics/10_data_inputs.R`
 
 Observed behavior:
 - shared-input stage copies a precomputed climate-factor CSV into the run tree;
@@ -121,7 +121,7 @@ Observed behavior:
 ### 2. Current frozen master factor is shared across cutoffs
 
 Authoritative frozen path family:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505/cutoff_date=*/covariates/cov_05_PCA.csv`
+- `SOURCE_WORKFLOW_ROOT/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505/cutoff_date=*/covariates/cov_05_PCA.csv`
 
 Observed properties for the representative frozen file:
 - rows: `13023`
@@ -136,11 +136,11 @@ Implication:
 ### 3. Historical GDPC and static PCA experiments both existed
 
 Relevant exploratory files:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Indexes_Notebook.ipynb`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Dynamic_PCA.ipynb`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/gdpc_fit.ipynb`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/gdpc_analysis.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/auto_gdpc_analysis.r`
+- `SOURCE_WORKFLOW_ROOT/Indexes_Notebook.ipynb`
+- `SOURCE_WORKFLOW_ROOT/Dynamic_PCA.ipynb`
+- `SOURCE_WORKFLOW_ROOT/gdpc_fit.ipynb`
+- `SOURCE_WORKFLOW_ROOT/gdpc_analysis.R`
+- `SOURCE_WORKFLOW_ROOT/auto_gdpc_analysis.r`
 
 Important notebook evidence already verified:
 - `Indexes_Notebook.ipynb` builds a 17-index daily standardized matrix.
@@ -150,7 +150,7 @@ Important notebook evidence already verified:
 ### 4. Historical raw climate-index directory is currently missing
 
 Notebook and script references point to:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/climate_indices/`
+- `SOURCE_WORKFLOW_ROOT/climate_indices/`
 
 Current audit result:
 - that directory does **not** exist in the current checkout;
@@ -162,7 +162,7 @@ Implication:
 ### 5. A reusable downloader starting point already exists
 
 Legacy source-acquisition script:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/indxex_download.py`
+- `SOURCE_WORKFLOW_ROOT/indxex_download.py`
 
 Implication:
 - we do not need to invent index acquisition from nothing;
@@ -232,7 +232,7 @@ This tracker recommends the following new workflow-side layout.
 ### A. Source data and outputs
 
 New lineage root:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/data/canonical_gdpc_master/v20260509/`
+- `SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/`
 
 Recommended substructure:
 - `inputs/raw_psl_text/`
@@ -299,7 +299,7 @@ This tracker recommends introducing a small, explicit script surface rather than
 ### New canonical config
 
 Recommended new config file:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/config/canonical_gdpc_master_covariate.yaml`
+- `SOURCE_WORKFLOW_ROOT/config/canonical_gdpc_master_covariate.yaml`
 
 Purpose:
 - freeze the canonical index list,
@@ -313,8 +313,8 @@ Purpose:
 ### New canonical build script
 
 Implemented builder surface:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/build_canonical_gdpc_master_covariate.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/build_canonical_gdpc_factor.R`
+- `SOURCE_WORKFLOW_ROOT/scripts/build_canonical_gdpc_master_covariate.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/build_canonical_gdpc_factor.R`
 
 Why split Python + R:
 - the `gdpc` package lives in R, so the factor fit itself remains in R
@@ -330,18 +330,18 @@ Implemented responsibilities:
 ### Optional helper scripts
 
 Implemented source-pipeline entry points in this pass:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/download_canonical_climate_indices.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/build_canonical_climate_daily_matrices.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/run_canonical_climate_index_pipeline.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/render_canonical_climate_index_diagnostics.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/build_canonical_climate_stationarity_audit.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/run_canonical_gdpc_master_pipeline.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/download_canonical_climate_indices.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/build_canonical_climate_daily_matrices.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/run_canonical_climate_index_pipeline.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/render_canonical_climate_index_diagnostics.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/build_canonical_climate_stationarity_audit.R`
+- `SOURCE_WORKFLOW_ROOT/scripts/run_canonical_gdpc_master_pipeline.py`
 - shared helper library:
-  - `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/canonical_climate_indices_lib.py`
+  - `SOURCE_WORKFLOW_ROOT/scripts/canonical_climate_indices_lib.py`
 - source-pipeline runbook:
-  - `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_GDPC_SOURCE_PIPELINE_RUNBOOK_20260509.md`
+  - `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_GDPC_SOURCE_PIPELINE_RUNBOOK_20260509.md`
 - full-pipeline runbook:
-  - `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_GDPC_MASTER_PIPELINE_RUNBOOK_20260509.md`
+  - `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_GDPC_MASTER_PIPELINE_RUNBOOK_20260509.md`
 
 ## Proposed Sign And Scaling Convention
 

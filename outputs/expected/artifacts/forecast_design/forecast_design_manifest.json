@@ -71,7 +71,7 @@
     "workflow_contract": "docs/he6_out_of_sample_forecast_design_contract_20260615.md",
     "article_contract": "docs/forecast_design_contract.md",
     "article_text": "wileyNJD-APA.tex",
-    "corrections_text": "/data/muscat_data/jaguir26/Corrections---Project-1/main.tex",
+    "corrections_text": "SOURCE_CORRECTIONS_ROOT/main.tex",
     "covariate_builder": "R/disc_w/03_covariates_standardize.R",
     "setup_support_renderer": "scripts/render_exal_m_t1_setup_support_by_cutoff_v2.py"
   }

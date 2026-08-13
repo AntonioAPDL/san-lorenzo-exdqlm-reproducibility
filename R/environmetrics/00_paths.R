@@ -76,7 +76,7 @@ nearest_available_label <- function(requested_label, path_map) {
   available[[which.min(abs(avail_int - req))]]
 }
 
-PROJECT_ROOT <- env_or_default("ENV_PROJECT_ROOT", "/data/muscat_data/jaguir26/project1_ucsc_phd")
+PROJECT_ROOT <- env_or_default("ENV_PROJECT_ROOT", "SOURCE_WORKFLOW_ROOT")
 PROJECT_ROOT <- normalizePath(PROJECT_ROOT, mustWork = FALSE)
 shared_helpers_path <- file.path(PROJECT_ROOT, "R", "unified", "families", "shared_input_helpers.R")
 if (file.exists(shared_helpers_path)) {
@@ -197,13 +197,13 @@ FEATURE_TABLE_PRESENT <- nzchar(COVARIATE_FEATURES_PATH) && file.exists(COVARIAT
 # Core inputs
 COV_ELI_PATH <- resolve_covariate_path(
   "ENV_COV_ELI_PATH",
-  "/data/muscat_data/jaguir26/projects/Project/Input/exAL/covariates/cov_1_ELI.csv",
+  "LEGACY_EXAL_INPUT_ROOT/covariates/cov_1_ELI.csv",
   "ELI covariate",
   allow_missing = FEATURE_TABLE_PRESENT
 )
 COV_ONI_PATH <- resolve_covariate_path(
   "ENV_COV_ONI_PATH",
-  "/data/muscat_data/jaguir26/projects/Project/Input/exAL/covariates/cov_2_ONI.csv",
+  "LEGACY_EXAL_INPUT_ROOT/covariates/cov_2_ONI.csv",
   "ONI covariate",
   allow_missing = FEATURE_TABLE_PRESENT
 )

@@ -6,7 +6,7 @@
 - blocked rows: `0`
 - pending families: `0`
 - pending submodels: `0`
-- canonical bundle: `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510`
+- canonical bundle: `STAGED_INPUT_BUNDLE_ROOT`
 - bundle run id: `20260510_publication_shared_r01`
 - final 9-model benchmark ready: `True`
 

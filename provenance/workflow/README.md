@@ -1,10 +1,15 @@
-# Project1 Forecasting Workflow
+# Project1 Research Workflow
 
-This repository contains the study-specific workflow for the revised article
+This live research repository contains the study-specific workflow for the revised article
 ``Bayesian Quantile-Based Correction and Synthesis of River Flow Forecasts``.
-It is the public workflow layer that connects the reusable `exdqlm` estimation
-package to the Santa Cruz River forecasting analysis, generated tables, figures,
-and cross-repository validation checks.
+It connects the reusable `exdqlm` estimation package to the Santa Cruz River
+forecasting analysis, generated tables, figures, and cross-repository
+validation checks.
+
+The public journal-facing reproducibility bundle is the curated export at
+`https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`. It is
+generated from this workspace by
+`scripts/export_san_lorenzo_exdqlm_reproducibility.py`.
 
 ## Reproducibility Contract
 
@@ -14,8 +19,11 @@ The current revision uses a three-layer software and reproducibility contract:
    version 1.1.0: `https://CRAN.R-project.org/package=exdqlm`. The package
    methods and software interface are described in the accompanying arXiv paper:
    `https://arxiv.org/abs/2607.22760`.
-2. This repository, `https://github.com/AntonioAPDL/Project1`, contains the
-   study-specific workflow, orchestration, post-processing, and validators.
+2. The clean public reproducibility repository,
+   `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`,
+   contains the curated study-specific workflow, compact staged inputs,
+   manuscript-facing outputs, provenance, and validators exported from this
+   live workspace.
 3. The revised article repository freezes manuscript-facing figures, tables,
    generated TeX fragments, and compact provenance manifests.
 

@@ -14,8 +14,9 @@ The revised article uses a three-layer reproducibility model:
 1. The reusable exDQLM estimation routines are available through the CRAN
    package `exdqlm`; the accompanying software paper is cited in the
    manuscript.
-2. The study-specific forecasting workflow is available in the public workflow
-   repository `https://github.com/AntonioAPDL/Project1`.
+2. The study-specific forecasting workflow is available through the clean
+   public reproducibility repository
+   `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`.
 3. This article repository freezes manuscript-facing figures, tables, generated
    TeX fragments, and compact provenance artifacts.
 
@@ -36,16 +37,17 @@ horizons.
 - Package DOI: `https://doi.org/10.32614/CRAN.package.exdqlm`
 - Software paper: `https://arxiv.org/abs/2607.22760`
 - Software paper DOI: `https://doi.org/10.48550/arXiv.2607.22760`
-- Workflow repository: `https://github.com/AntonioAPDL/Project1`
-- Workflow archive DOI: pending final revision freeze
+- Public reproducibility repository:
+  `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`
+- Reproducibility archive DOI: pending final revision freeze
 
-The workflow repository also carries the public-facing release-readiness files
-that will support the final archived release:
+The public reproducibility repository carries the reader-facing files and
+validation entrypoint that will support the final archived release:
 
 - `README.md`
 - `CITATION.cff`
-- `RELEASE_NOTES_PENDING_FINAL_ARCHIVE.md`
-- `docs/workflow_archive_readiness_20260615.md`
+- `LICENSE`
+- `scripts/validate_public_repository.py`
 
 These files document the current public repository state and the remaining final
 archive steps. They do not replace the final archive DOI, which remains pending.

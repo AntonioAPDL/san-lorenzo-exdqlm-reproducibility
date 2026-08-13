@@ -4,9 +4,9 @@ metadata:
   model_family: "exdqlm_multivar_keep"
   manuscript_label: "exAL-M-T1"
   model_id: "exdqlm_multivar_synth_keep"
-  runtime_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524"
+  runtime_root: "SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524"
   input_bundle_contract: "PPT|SOIL|PCA(alias=GDPC1)"
-  bundle_artifact_root: "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510"
+  bundle_artifact_root: "STAGED_INPUT_BUNDLE_ROOT"
   bundle_run_id: "20260510_publication_shared_r01"
   data_start: "1987-05-29"
   max_iter: 100

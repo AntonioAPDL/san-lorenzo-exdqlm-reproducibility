@@ -1,9 +1,9 @@
 campaign:
   campaign_id: he2_table1_targeted_repair_20260612
   campaign_spec_id: he2tbl1fix20260612
-  artifact_root: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_table1_targeted_repair_20260612
-  matrix_dir: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_table1_targeted_repair_20260612/control/publication_relaunch_matrix
-  config_output_dir: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_table1_targeted_repair_20260612/control/generated_configs
+  artifact_root: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612
+  matrix_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612/control/publication_relaunch_matrix
+  config_output_dir: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_table1_targeted_repair_20260612/control/generated_configs
   cutoffs:
     - '20210123'
     - '20211112'
@@ -23,7 +23,7 @@ campaign:
 source:
   publication_manifest: reports/he2_publication_manifest/he2_bayesian_publication_manifest.csv
 bundles:
-  artifact_root: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510
+  artifact_root: STAGED_INPUT_BUNDLE_ROOT
   bundle_run_id: 20260510_publication_shared_r01
   data_start: '1987-05-29'
   cutoffs:

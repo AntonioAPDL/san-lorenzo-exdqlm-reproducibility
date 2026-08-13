@@ -35,8 +35,8 @@ than the full Santa Cruz basin workflow.
 
 ### 2. Study-specific workflow
 
-- Workflow repository: `https://github.com/AntonioAPDL/Project1`
-- Local workflow repository: `/data/muscat_data/jaguir26/project1_ucsc_phd`
+- Workflow repository: `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`
+- Local workflow repository: `SOURCE_WORKFLOW_ROOT`
 - Canonical runbook:
   `repro/run/CANONICAL_REVISED_ARTICLE_WORKFLOW.md`
 - Environment strategy:
@@ -58,7 +58,7 @@ documentation and release archival metadata.
 ### 3. Revised article freeze
 
 - Article repository:
-  `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2`
+  `SOURCE_ARTICLE_ROOT`
 - Article-side manifest:
   `MANUSCRIPT_ASSET_MANIFEST.json`
 - Software availability manifest:

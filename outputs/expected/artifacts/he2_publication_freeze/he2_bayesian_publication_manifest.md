@@ -137,7 +137,7 @@ Archival caveat:
 
 ## Outputs
 
-- manifest: `/data/muscat_data/jaguir26/project1_ucsc_phd/reports/he2_publication_manifest/he2_bayesian_publication_manifest.csv`
-- inputs: `/data/muscat_data/jaguir26/project1_ucsc_phd/reports/he2_publication_manifest/he2_bayesian_publication_inputs.csv`
-- alignment: `/data/muscat_data/jaguir26/project1_ucsc_phd/reports/he2_publication_manifest/he2_bayesian_publication_alignment.csv`
+- manifest: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_manifest.csv`
+- inputs: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_inputs.csv`
+- alignment: `SOURCE_WORKFLOW_ROOT/reports/he2_publication_manifest/he2_bayesian_publication_alignment.csv`
 

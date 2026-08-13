@@ -147,7 +147,7 @@ Evidence role:
 
 Evidence file (project-local):
 
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/results.pkl` (`NWM-LOCAL-01`)
+- `SOURCE_WORKFLOW_ROOT/results.pkl` (`NWM-LOCAL-01`)
 - Object type: Python dictionary (`1,832,084` entries)
 - Key pattern parsed for this audit:
   - `issue_date`: `nwm.YYYYMMDD/...`
@@ -941,7 +941,7 @@ For each candidate retrospective -> forecast pairing, document:
 
 ### 7.3 Project-Local Evidence Inputs
 
-- `NWM-LOCAL-01`: `/data/muscat_data/jaguir26/project1_ucsc_phd/results.pkl`
+- `NWM-LOCAL-01`: `SOURCE_WORKFLOW_ROOT/results.pkl`
 - `GLOFAS-LOCAL-01`: `scripts/forecats_probe_glofas_coverage.py`
 - `GLOFAS-LOCAL-02`: `repro/glofas_probe_runs/probe_20260216T010503Z/manifests/probe_manifest.csv`
 - `GLOFAS-LOCAL-03`: `repro/glofas_probe_runs/probe_20260216T010529Z/manifests/probe_manifest.csv`

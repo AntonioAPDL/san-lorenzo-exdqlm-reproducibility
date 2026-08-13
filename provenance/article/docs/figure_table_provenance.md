@@ -5,30 +5,31 @@
 This document records the current provenance status of manuscript figures and interpretation-dependent tables for the revised Environmetrics article.
 
 Primary manuscript repo:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2`
+- `SOURCE_ARTICLE_ROOT`
 
 Primary workflow repo currently linked to figure/table generation:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd`
+- `SOURCE_WORKFLOW_ROOT`
 
 Main purpose:
 - identify which manuscript outputs are already traceable to the current workflow,
 - distinguish reproducible workflow-linked outputs from legacy or ambiguous outputs,
 - and define the next regeneration tasks needed to align all interpretation material with the final selected `exAL-M-T1` analysis behind Table 1.
 
-Companion relaunch document:
-- `docs/exal_m_t1_relaunch_checklist.md`
-  - This records the exact cutoff-by-cutoff source runs behind the published `exAL-M-T1` CRPS values, the required rerun artifacts, and the post-rerun validation contract.
-- `docs/exal_m_t1_shared_rerun_checklist.md`
-  - This records the planned next shared-spec rerun and the article-side figure/table families that will be refreshed from it once the new relaunch completes.
+Tracked article-side companions:
+- `MANUSCRIPT_ASSET_MANIFEST.json`
+- `docs/exal_m_t1_artifact_run_map.md`
+- `docs/forecast_design_contract.md`
+- `docs/latest_forecast_issue_contract.md`
+- `docs/software_availability_contract.md`
 
 Setup/support figure correction plan:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_SOURCE_MANIFEST.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_FILE_PLAN.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_ACCEPTANCE_CHECKLIST.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_SOURCE_MANIFEST.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_FILE_PLAN.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/EXAL_M_T1_SETUP_SUPPORT_V2_ACCEPTANCE_CHECKLIST.md`
 
 Canonical forward runbook:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_REVISED_ARTICLE_WORKFLOW.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/HE2_FULL_HISTORY_REPAIR_FORWARD_PLAN.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_REVISED_ARTICLE_WORKFLOW.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/HE2_FULL_HISTORY_REPAIR_FORWARD_PLAN.md`
 
 Article-side provenance refresh helper:
 - `MANUSCRIPT_ASSET_MANIFEST.json`
@@ -43,12 +44,7 @@ Article-side provenance refresh helper:
 - `scripts/build_generated_asset_index.py`
 - `scripts/refresh_all_generated_assets.py`
 
-Article-side review outputs:
-- `reports/manuscript_asset_review/ARTICLE_ASSET_REVIEW.md`
-- `reports/manuscript_asset_review/figure_gallery.html`
-- `reports/manuscript_asset_review/CURRENT_MODEL_OUTPUT_WIRING_AUDIT.md`
-- `reports/manuscript_asset_review/FIGURE_POLISH_STATUS_AUDIT.md`
-- `reports/manuscript_figure_selection/selection_manifest.json`
+Tracked article-side provenance outputs:
 - `tables/generated_tex/README.md`
 - `artifacts/README.md`
 - `artifacts/artifact_inventory.csv`
@@ -56,6 +52,10 @@ Article-side review outputs:
 - `Figures/multivariate_synthesis_by_cutoff/README.md`
 - `Figures/appendix_cutoff_panels/README.md`
 - `Figures/forecast_context_by_cutoff/README.md`
+
+Local audit reports and HTML galleries are generated under ignored `reports/`
+when the broad refresh workflow is run. They are not part of the
+submission-facing tracked repository.
 
 This inventory now distinguishes three reproducibility levels:
 - objects frozen locally in the article repo and tied to verified selected-model reruns,
@@ -85,7 +85,7 @@ summaries, and cutoff-specific multivariate synthesis panels now use:
 
 - retained canonical-grid winners for `20210123` and `20211112`;
 - clean replays from
-  `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623`
+  `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_partial_authority_refresh_20260623`
   for `20211221`, `20220511`, and `20221225`.
 
 Under this refreshed authority, `exAL-M-T1` has the lowest 28-day CRPS in all
@@ -131,7 +131,7 @@ That legacy script still relies on notebook-linearized state and hard-coded exte
 The representative selected-model refresh is now partially complete.
 
 Verified source run:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_multivar_keep`
+- `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/multimodel_20221225_v8_he2pubgdpc1r1_exdqlm_multivar_keep`
 
 Verified status:
 - `validation_status=pass`
@@ -140,7 +140,7 @@ Verified status:
 - posterior table exports are present
 
 The revised manuscript repo now contains a local copy of the representative selected-model artifacts under:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2/artifacts/representative_selected_model_2022_12_25`
+- `SOURCE_ARTICLE_ROOT/artifacts/representative_selected_model_2022_12_25`
 
 Those copied artifacts include:
 - `posterior_samples_valid.png`
@@ -177,7 +177,7 @@ Legacy article-side support bundles removed during the 2026-05-09 cleanup:
 
 It also contains a dedicated cutoff-specific setup/support figure family derived from the five verified `exAL-M-T1` run bundles:
 - `artifacts/five_cutoff_setup_support/`
-- `reports/five_cutoff_setup_support_review/`
+- optional local audit outputs under ignored `reports/`
 
 That family is produced from the current workflow-side derivation path:
 - `config/exal_m_t1_setup_support_by_cutoff_v2_20260516.json`
@@ -322,12 +322,11 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 
 1. The four setup/support figures are now reproduced through the corrected cutoff-specific `v2` workflow.
    - Workflow-side review:
-     - `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/exal_m_t1_setup_support_by_cutoff_v2_20260516/review/`
-   - Article-side mirror and review:
+     - `SOURCE_RUNTIME_ROOT/exal_m_t1_setup_support_by_cutoff_v2_20260516/review/`
+   - Article-side mirror:
      - `artifacts/five_cutoff_setup_support/`
-     - `reports/five_cutoff_setup_support_review/`
-   - Representative manuscript promotion:
-     - `reports/representative_setup_selection/selection_manifest.json`
+   - Representative manuscript promotion is governed by:
+     - `MANUSCRIPT_ASSET_MANIFEST.json`
    - This validated family covers:
      - `usgs.png`
      - `precip_soilmoisture_climatePC1_faceted_labeled.png`
@@ -337,8 +336,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
      - `usgs.png` and the raw covariate figure use the full `1987-05-29 -> cutoff` daily history available in the selected-run shared inputs
      - `forecats.png` uses a strict `cutoff - 28 days` to `cutoff + 28 days` display window
      - the retrospective figure now uses repaired full-history retrospective support from `1987-05-29 -> cutoff` for all five cutoffs through the canonical `20260510` shared-input bundles
-   - The full per-cutoff availability audit is recorded in:
-     - `reports/five_cutoff_setup_support_review/SETUP_SUPPORT_BY_CUTOFF_V2_REVIEW.md`
+   - Per-cutoff availability audits can be regenerated locally under ignored `reports/`.
    - The older `20260506` `v1` family has been removed from the article repo as part of the cleanup pass; only the canonical `v2` family remains.
 
 2. `forecats.png` remains more delicate than the other setup figures, but the canonical `v2` path now stages bundle-native forecast inputs explicitly.
@@ -452,7 +450,7 @@ The following policy is now adopted for the revised manuscript and should govern
 ## Recent selected-model workflow status
 
 A recent validated family of selected-model runs exists under:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/`
+- `SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_sharedspec_20260516/runs/`
 
 For all five manuscript cutoffs, the corresponding `exdqlm_multivar_keep` runs:
 - passed validation,
@@ -471,9 +469,8 @@ Resolved gaps from this audit:
 - the narrow `exAL-M-T1` replay path was completed with the required post-export fixes, so the representative selected-model outputs and posterior interpretation tables are now frozen locally in the revised article repo.
 - the cutoff-dependent setup/support figures are now mirrored locally in the revised article repo through:
   - `artifacts/five_cutoff_setup_support/`
-  - `reports/five_cutoff_setup_support_review/`
 - the manuscript-facing `Figures/manuscript/` copies for `fig:sanlorenzo`, `fig:covariates`, `fig:retrospectives`, and `fig:ensembles` are now promoted from the representative `20221225_exal_m_t1` `v2` bundle through:
-  - `reports/representative_setup_selection/selection_manifest.json`
+  - `MANUSCRIPT_ASSET_MANIFEST.json`
 - the appendix univariate transfer-active reference synthesis and the historical-summary figures now share the current article-side provenance anchor:
   - `artifacts/historical_support_from_current_models/`
 - In practice, this means:
@@ -482,12 +479,14 @@ Resolved gaps from this audit:
   - `fig:dry_quantile`, `fig:rainy_quantile`, and `fig:80_components` remain selected-model interpretation diagnostics from the current representative selected-output authority,
   - and the four setup/support figures are preserved through the validated `v2` cutoff family, while older article-side support families have been removed.
 
-## Exact relaunch handoff
+## Exact Authority Handoff
 
-The high-level provenance inventory in this file is now paired with a run-level relaunch checklist:
-- `docs/exal_m_t1_relaunch_checklist.md`
+The high-level provenance inventory in this file is paired with the run-level
+artifact map and the workflow-side authority runbook:
+- `docs/exal_m_t1_artifact_run_map.md`
+- `SOURCE_WORKFLOW_ROOT/docs/current_authority_refresh_runbook.md`
 
-Use that companion file when:
+Use these files when:
 - identifying the authoritative source run for a given cutoff,
 - rerunning the selected specification associated with a published Table 1 CRPS value,
 - verifying that the rerun reproduces the selected `exAL-M-T1` CRPS exactly,

@@ -24,27 +24,27 @@ forecast_issue_policy:
   legacy_weighted_daily_filenames_are_aliases: true
   nws:
     selection_rule: latest_issue_datetime_per_target_hour_member_then_daily_mean
-    source_snapshot: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
+    source_snapshot: SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
   glofas:
     selection_rule: issue_date_equals_cutoff
-    source_snapshot: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
+    source_snapshot: SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
 histfix:
   purpose: restore long-history retrospective support for the v8 corrected support-bundle
     campaign
   glofas_source_id: glofas_hist_v21_htessel_cons
   glofas_product_id: hist_v21_htessel_cons
-  glofas_point_series_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/hist_v21_htessel_cons_point.csv
-  glofas_point_series_meta: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/hist_v21_htessel_cons_point.meta.json
+  glofas_point_series_path: STAGED_INPUT_BUNDLE_ROOT/source_series/hist_v21_htessel_cons_point.csv
+  glofas_point_series_meta: STAGED_INPUT_BUNDLE_ROOT/source_series/hist_v21_htessel_cons_point.meta.json
   nws_source_policy:
     primary_source_id: nws_retro_v21
-    primary_daily_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/nws_retro_v21_daily.csv
+    primary_daily_path: STAGED_INPUT_BUNDLE_ROOT/source_series/nws_retro_v21_daily.csv
     tail_fill_source_id: nws_retro_v30
-    tail_fill_daily_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/source_series/nws_retro_v30_daily.csv
+    tail_fill_daily_path: STAGED_INPUT_BUNDLE_ROOT/source_series/nws_retro_v30_daily.csv
     tail_fill_start: '2021-01-01'
     selection_rule: use v2.1 through its natural coverage end; fill subsequent cutoff-era
       dates from v3.0 daily retrospective
-  usgs_daily_source_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=usgs_daily_flow/full_runs/source_native_tranche1_20260406T194500Z/outputs/usgs_daily_flow_11160500.csv
-  support_manifest: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/supporting_inputs/support_manifest.json
+  usgs_daily_source_path: SOURCE_RUNTIME_ROOT/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=usgs_daily_flow/full_runs/source_native_tranche1_20260406T194500Z/outputs/usgs_daily_flow_11160500.csv
+  support_manifest: STAGED_INPUT_BUNDLE_ROOT/supporting_inputs/support_manifest.json
   legacy_log_ready_repairs:
   - column: usgs_cms
     floor_value_cms: 0.17358226965800008
@@ -59,10 +59,10 @@ histfix:
     replaced_nonpositive_count: 0
     selected_window_nonpositive_count: 0
   forecast_member_sources:
-    nws: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
-    glofas: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
+    nws: SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/nws_forecast.csv
+    glofas: SOURCE_RUNTIME_ROOT/multimodel_v8_20260402/runs/multimodel_20210123_v8_epsTT_l1/inputs/shared/forecats_bundle/glofas_forecast.csv
   selected_window_splice:
-    retros_path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524/runs/multimodel_20210123_v8_he2grid_c04_eps365_exdqlm_multivar_keep/inputs/shared/retros/retros.csv
+    retros_path: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_epsilon_discount_grid_20260524/runs/multimodel_20210123_v8_he2grid_c04_eps365_exdqlm_multivar_keep/inputs/shared/retros/retros.csv
     overlap_start: '1987-05-29'
     overlap_end: '2021-01-23'
     rows_spliced: 12294

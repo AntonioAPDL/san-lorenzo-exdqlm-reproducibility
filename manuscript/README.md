@@ -1,38 +1,36 @@
 # Revised Article Repository
 
-This repository is the advisor-facing freeze of the revised manuscript, its manuscript-facing figures and tables, and the article-local artifact bundles used to regenerate them.
+This repository is the submission-facing freeze of the revised manuscript, its manuscript-facing figures and tables, and the article-local artifact bundles used to verify them.
 
 ## Where to look first
 
 - `wileyNJD-APA.tex`: manuscript source used by Overleaf
 - `Figures/manuscript/`: the exact figure files used by the manuscript
-- `Figures/forecast_context_by_cutoff/`: advisor-facing copies of the Figure 4 forecast-context view for all five cutoffs
+- `Figures/forecast_context_by_cutoff/`: cutoff-wide copies of the Figure 4 forecast-context view for all five cutoffs
 - `Figures/multivariate_synthesis_by_cutoff/`: cutoff-wide selected-model synthesis family, including the supplementary overlay panels
-- `Figures/reference_synthesis_by_cutoff/`: advisor-facing Figure A2-style family for all five cutoffs
+- `Figures/reference_synthesis_by_cutoff/`: Figure A2-style reference-synthesis family for all five cutoffs
 - `tables/generated_tex/`: the exact generated table blocks included by the manuscript
 - `docs/figure_table_provenance.md`: figure/table provenance summary
-- `reports/manuscript_asset_review/ARTICLE_ASSET_REVIEW.md`: review report for the current article assets
-- `reports/manuscript_asset_review/FIGURE_POLISH_STATUS_AUDIT.md`: point-by-point status audit for the earlier figure-polish request
 - `artifacts/software_availability/software_availability_manifest.json`: compact HE-5 software availability and archive-status manifest
 - `docs/software_availability_contract.md`: manuscript-side software reproducibility contract
 - `scripts/validate_manuscript_figure_paths.py`: validates that every `\includegraphics{}` call in the manuscript resolves through the canonical figure search paths
+- Public clean reproducibility bundle: `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`
 
 For any future HE2 publication-authority replacement, start from the workflow
 runbook:
 
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/docs/current_authority_refresh_runbook.md`
+- `SOURCE_WORKFLOW_ROOT/docs/current_authority_refresh_runbook.md`
 
 Authority promotion is workflow-first. This article repo snapshots the promoted
-manifest, generated tables, figures, and poster artifacts after the workflow
-overlay and validators pass.
+manifest, generated tables, and figures after the workflow overlay and
+validators pass.
 
 ## Directory roles
 
-- `figures/`: manuscript-facing figures, appendix cutoff panels, and advisor-facing cutoff-wide forecast/synthesis figure families
+- `Figures/`: manuscript-facing figures, appendix cutoff panels, and cutoff-wide forecast/synthesis figure families
 - `tables/`: generated TeX tables used by the manuscript
 - `artifacts/`: frozen local bundles copied from validated workflow outputs
-- `reports/`: review reports, galleries, audits, and selection manifests
-- `docs/`: advisor-facing documentation and provenance notes
+- `docs/`: submission-facing documentation and provenance notes
 - `scripts/`: refresh and audit scripts used to rebuild the article-side bundles
 
 ## Standard refresh command
@@ -48,9 +46,9 @@ Overleaf Git-sync compatibility.
 
 For a benchmark-only authority refresh, prefer the narrower sequence in the
 workflow runbook: refresh the HE2 manifest snapshot, selected-model bundles,
-cutoff synthesis families, generated table includes, poster figures/PDF, and
-corrections response tables. Use the broad refresh only when setup/support or
-full-history diagnostic assets are intentionally being rebuilt too.
+cutoff synthesis families, generated table includes, and corrections response
+tables. Use the broad refresh only when setup/support, full-history diagnostic
+assets, or local audit reports are intentionally being rebuilt too.
 
 ## Overleaf sync recovery
 

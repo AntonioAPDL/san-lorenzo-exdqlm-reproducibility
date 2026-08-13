@@ -156,7 +156,7 @@ python3 glofas_operational_mediumrange_download_point.py \
 ```bash
 # Example: one split session (repeat for optB/optC/optD with own interval file)
 tmux new -d -s glofas_optA \
-  "cd /data/muscat_data/jaguir26/project1_ucsc_phd && \
+  "cd SOURCE_WORKFLOW_ROOT && \
    python3 glofas_operational_mediumrange_download_point.py --run --intervals-file /tmp/optA_intervals.txt --verbose \
    |& tee data/glofas_operational_medium_range/logs/optA_stdout.log"
 ```
@@ -230,7 +230,7 @@ rg -n "\[ERR\]|404|error" data/glofas_operational_medium_range/logs/download.log
 ## Quick Start
 
 ```bash
-cd /data/muscat_data/jaguir26/project1_ucsc_phd
+cd SOURCE_WORKFLOW_ROOT
 
 # 1) Audit current batch readiness
 Rscript scripts/forecats_batch.R \

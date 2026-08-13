@@ -29,9 +29,9 @@ class PublicationFreezeValidationTests(unittest.TestCase):
         self.assertEqual(HE3_LABEL_BY_VARIANT["noH3"], "exAL-M-T1-noH3")
 
     def test_non_promoted_worse_repair_set_is_locked(self) -> None:
-        self.assertEqual(len(NON_PROMOTED_WORSE_REPAIRS), 8)
+        self.assertEqual(len(NON_PROMOTED_WORSE_REPAIRS), 3)
         self.assertIn(("20221225", "exAL-M-T0"), NON_PROMOTED_WORSE_REPAIRS)
-        self.assertIn(("20210123", "exAL-U-T1"), NON_PROMOTED_WORSE_REPAIRS)
+        self.assertIn(("20210123", "N-M-T1"), NON_PROMOTED_WORSE_REPAIRS)
 
     def test_parse_flat_tex_handles_bold_numeric_cells(self) -> None:
         with tempfile.TemporaryDirectory(prefix="publication_freeze_tex_") as td:

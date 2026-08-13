@@ -3,7 +3,7 @@
 Date: 2026-05-09
 
 Scope:
-- Repo audited: `/data/muscat_data/jaguir26/project1_ucsc_phd`
+- Repo audited: `SOURCE_WORKFLOW_ROOT`
 - This report documents the current PCA/GDPC state, the evidence behind it, and the agreed direction for the next reproducibility-hardening phase.
 - This is a design and provenance report only. No GDPC regeneration or model reruns are implemented in this report.
 
@@ -25,15 +25,15 @@ Agreed design choices for the future implementation phase:
 This future GDPC artifact will become the canonical master climate covariate used across cutoffs and then sliced by date inside the current workflow structure.
 
 Companion implementation tracker for the next phase:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_GDPC_IMPLEMENTATION_TRACKER_20260509.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_GDPC_IMPLEMENTATION_TRACKER_20260509.md`
 
 Implemented source-pipeline runbook:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/run/CANONICAL_GDPC_SOURCE_PIPELINE_RUNBOOK_20260509.md`
+- `SOURCE_WORKFLOW_ROOT/repro/run/CANONICAL_GDPC_SOURCE_PIPELINE_RUNBOOK_20260509.md`
 
 Implemented source-pipeline entry points:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/download_canonical_climate_indices.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/build_canonical_climate_daily_matrices.py`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/scripts/run_canonical_climate_index_pipeline.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/download_canonical_climate_indices.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/build_canonical_climate_daily_matrices.py`
+- `SOURCE_WORKFLOW_ROOT/scripts/run_canonical_climate_index_pipeline.py`
 
 ## 2. What the current workflow actually does
 
@@ -49,9 +49,9 @@ Evidence:
 - No active `R/unified` or current workflow `scripts/` path calls `gdpc` or `auto.gdpc`.
 
 Relevant files:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/unified/stages/stage_data_prep_shared.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/disc_w/03_covariates_standardize.R`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/R/environmetrics/10_data_inputs.R`
+- `SOURCE_WORKFLOW_ROOT/R/unified/stages/stage_data_prep_shared.R`
+- `SOURCE_WORKFLOW_ROOT/R/disc_w/03_covariates_standardize.R`
+- `SOURCE_WORKFLOW_ROOT/R/environmetrics/10_data_inputs.R`
 
 ### 2.2 Current model-facing artifact
 
@@ -79,10 +79,10 @@ That behavior is already wired in the current code paths and must be acknowledge
 The five authoritative frozen shared-input snapshots all use the same PCA file content byte-for-byte.
 
 Authoritative snapshot root:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505`
+- `SOURCE_WORKFLOW_ROOT/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505`
 
 For the representative `2022-12-25` cutoff, the preserved PCA file is:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505/cutoff_date=2022-12-25/covariates/cov_05_PCA.csv`
+- `SOURCE_WORKFLOW_ROOT/repro/frozen_shared_inputs/exalm_t1_authoritative_20260505/cutoff_date=2022-12-25/covariates/cov_05_PCA.csv`
 
 Observed properties:
 - rows: `13023`
@@ -173,8 +173,8 @@ The revised manuscript currently still says:
 - the first component explains `53.42%`
 
 Relevant files:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2/wileyNJD-APA.tex`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/article.txt`
+- `SOURCE_ARTICLE_ROOT/wileyNJD-APA.tex`
+- `SOURCE_WORKFLOW_ROOT/article.txt`
 
 At present, those claims are not backed by the active reproducible workflow.
 
@@ -299,8 +299,8 @@ Rationale:
 - forcing stationarity by differencing would discard part of the large-scale climate signal we are explicitly trying to summarize in the master factor
 
 Reproducible audit outputs:
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/data/canonical_gdpc_master/v20260509/review/stationarity/CANONICAL_GDPC_STATIONARITY_AUDIT.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd/data/canonical_gdpc_master/v20260509/review/stationarity/stationarity_audit.csv`
+- `SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/review/stationarity/CANONICAL_GDPC_STATIONARITY_AUDIT.md`
+- `SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/review/stationarity/stationarity_audit.csv`
 
 ### 7.5 Output contract
 

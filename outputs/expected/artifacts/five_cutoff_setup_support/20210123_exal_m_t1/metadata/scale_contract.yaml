@@ -4,28 +4,28 @@ display_scale_basis: workflow_support_display_contract
 selected_run_internal_analysis_scale: log1p_cms
 figure_inputs:
   usgs_daily:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/usgs/usgs_daily.csv
+    path: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/usgs/usgs_daily.csv
     storage_scale: raw_cms
   covariate_ppt:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/covariates/cov_01_PPT.csv
+    path: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/covariates/cov_01_PPT.csv
     storage_scale: native_covariate_scale
   covariate_soil:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/covariates/cov_02_SOIL.csv
+    path: SOURCE_RUNTIME_ROOT/multimodel_v8_he2_exdqlm_multivar_keep_all_cutoffs_20260512/runs/multimodel_20210123_v8_he2pubgdpc1r1_exdqlm_multivar_keep/inputs/shared/covariates/cov_02_SOIL.csv
     storage_scale: native_covariate_scale
   covariate_gdpc:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd/data/canonical_gdpc_master/v20260509/outputs/gdpc_master_component_01_19870529_20230122.csv
+    path: SOURCE_WORKFLOW_ROOT/data/canonical_gdpc_master/v20260509/outputs/gdpc_master_component_01_19870529_20230122.csv
     storage_scale: dimensionless_canonical_gdpc_score
     note: Rendered from the canonical GDPC1 master factor and sliced to the cutoff-specific
       support window; workflow-facing cov_03_PCA.csv remains a compatibility alias
       for downstream fit consumers.
   forecast_glofas_weighted:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/glofas_weighted_daily.csv
+    path: STAGED_INPUT_BUNDLE_ROOT/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/glofas_weighted_daily.csv
     storage_scale: raw_cms
   forecast_nws_weighted:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/nws_weighted_daily.csv
+    path: STAGED_INPUT_BUNDLE_ROOT/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/nws_weighted_daily.csv
     storage_scale: raw_cms
   retrospective_history:
-    path: /data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/retros_source_lineage.csv
+    path: STAGED_INPUT_BUNDLE_ROOT/stable_inputs/site=11160500/cutoff_date=2021-01-23/run_id=20260510_publication_shared_r01/inputs/retros_source_lineage.csv
     storage_scale: raw_cms
     note: inputs/retros_daily.csv remains a legacy log1p bundle artifact and is not
       used directly for the rendered retrospective or staged forecast-context plots.

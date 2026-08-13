@@ -46,6 +46,6 @@
     "workflow_contract": "docs/he7_latest_forecast_issue_contract_20260615.md",
     "article_contract": "docs/latest_forecast_issue_contract.md",
     "article_text": "wileyNJD-APA.tex",
-    "corrections_text": "/data/muscat_data/jaguir26/Corrections---Project-1/main.tex"
+    "corrections_text": "SOURCE_CORRECTIONS_ROOT/main.tex"
   }
 }

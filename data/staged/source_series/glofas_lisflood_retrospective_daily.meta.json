@@ -1,5 +1,5 @@
 {
-  "campaign_root": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=glofas_historical/full_runs/source_native_tranche1_20260406T194500Z/outputs/historical_zips/hist_v31_lisflood_cons",
+  "campaign_root": "SOURCE_RUNTIME_ROOT/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=glofas_historical/full_runs/source_native_tranche1_20260406T194500Z/outputs/historical_zips/hist_v31_lisflood_cons",
   "cell_lat": 37.05,
   "cell_lat_index": 3,
   "cell_lon_index": 3,
@@ -10,7 +10,7 @@
   "end_date": "2022-12-25",
   "n_rows": 12995,
   "n_zip_shards": 433,
-  "reference_zip": "/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=glofas_historical/full_runs/source_native_tranche1_20260406T194500Z/outputs/historical_zips/hist_v31_lisflood_cons/year=1987/month=05/hist_v31_lisflood_cons_1987-05_0c6de716b4.zip",
+  "reference_zip": "SOURCE_RUNTIME_ROOT/data_recovery/site=11160500/recovery_run=site11160500_recovery_20260406T185022Z/family=glofas_historical/full_runs/source_native_tranche1_20260406T194500Z/outputs/historical_zips/hist_v31_lisflood_cons/year=1987/month=05/hist_v31_lisflood_cons_1987-05_0c6de716b4.zip",
   "start_date": "1987-05-29",
   "target_lat": 37.0443931,
   "target_lon": -122.072464,

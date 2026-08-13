@@ -13,7 +13,9 @@ Use a layered reproducibility contract:
 
 1. CRAN `exdqlm` version 1.1.0 is the public reusable estimation package, with
    the accompanying software paper at `https://arxiv.org/abs/2607.22760`.
-2. GitHub `AntonioAPDL/Project1` is the public study-specific workflow.
+2. GitHub `AntonioAPDL/san-lorenzo-exdqlm-reproducibility` is the public
+   study-specific reproducibility bundle exported from the live workflow
+   workspace.
 3. The revised article repository is the publication freeze of figures, tables,
    generated TeX fragments, and compact provenance manifests.
 4. A permanent workflow archive DOI will be minted after final revision freeze,
@@ -23,8 +25,9 @@ Use a layered reproducibility contract:
 
 - The article repository is intentionally not a full compute environment. It
   carries the manuscript-facing artifacts and compact manifests.
-- The workflow repository is the only appropriate place for model orchestration,
-  runtime configuration, post-stage generation, and validator logic.
+- The live workflow repository is the source of model orchestration, runtime
+  configuration, post-stage generation, and validator logic. The public
+  reproducibility repository is the curated reviewer-facing export.
 - The old `repro/REPRODUCE_PAPER.md` is a legacy record and should not be used
   as the current reproduction contract.
 - The package-level method is already public through CRAN and the accompanying
@@ -34,13 +37,14 @@ Use a layered reproducibility contract:
 ## Required Implementation State
 
 - Manuscript `Code availability` text names the CRAN package, package DOI,
-  arXiv software paper, and workflow repository.
+  arXiv software paper, and public reproducibility repository.
 - Corrections HE-5 response mirrors the manuscript wording.
 - Article repo contains:
   `artifacts/software_availability/software_availability_manifest.json`
-- Workflow repo contains root public-facing release-readiness files:
-  `README.md`, `CITATION.cff`, and
-  `RELEASE_NOTES_PENDING_FINAL_ARCHIVE.md`.
+- Workflow repo contains the public-repo exporter:
+  `scripts/export_san_lorenzo_exdqlm_reproducibility.py`.
+- Public reproducibility repo contains root reader-facing files:
+  `README.md`, `CITATION.cff`, `LICENSE`, `Makefile`, and validation scripts.
 - Workflow repo contains final archive checklist:
   `docs/workflow_archive_readiness_20260615.md`.
 - Workflow validators check the manifest and prose.

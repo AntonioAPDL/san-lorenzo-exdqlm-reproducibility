@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${WORKFLOW_ROOT:-/data/muscat_data/jaguir26/project1_ucsc_phd}"
+ROOT="${WORKFLOW_ROOT:-SOURCE_WORKFLOW_ROOT}"
 ARTICLE_ROOT="${ARTICLE_ROOT:-$ROOT/Evironmetrics---REVISED-DOC-Corrected-2}"
-CORRECTIONS_ROOT="${CORRECTIONS_ROOT:-/data/muscat_data/jaguir26/Corrections---Project-1}"
+CORRECTIONS_ROOT="${CORRECTIONS_ROOT:-SOURCE_CORRECTIONS_ROOT}"
+PUBLIC_REPRO_ROOT="${PUBLIC_REPRO_ROOT:-PUBLIC_REPRO_ROOT}"
 
 run_compile=0
 if [[ "${1:-}" == "--compile" ]]; then
@@ -14,12 +15,10 @@ Usage:
   scripts/validate_current_authority_sync.sh [--compile]
 
 Checks the current HE2 authority wiring across the workflow repo, revised
-article repo, corrections response repo, and tracked poster PDF.
+article repo, corrections response repo, and clean public reproducibility repo.
 
 Without --compile, this is a non-mutating validation pass. With --compile, it
-also rebuilds the article PDF, corrections PDF, and poster PDF; use that before
-committing a deliberate authority refresh because LaTeX embeds timestamps in
-tracked PDFs.
+also rebuilds the article PDF and corrections PDF.
 USAGE
   exit 0
 elif [[ -n "${1:-}" ]]; then
@@ -43,9 +42,11 @@ section "Repository Roots"
 printf 'workflow:    %s\n' "$ROOT"
 printf 'article:     %s\n' "$ARTICLE_ROOT"
 printf 'corrections: %s\n' "$CORRECTIONS_ROOT"
+printf 'public repro:%s\n' "$PUBLIC_REPRO_ROOT"
 require_file "$ARTICLE_ROOT/artifacts/he2_publication_freeze/he2_bayesian_publication_manifest.csv"
-require_file "$ARTICLE_ROOT/isba2026_poster/poster.pdf"
 require_file "$CORRECTIONS_ROOT/tables/generated_tex/he2_benchmark_crps_response_table.tex"
+require_file "$PUBLIC_REPRO_ROOT/README.md"
+require_file "$PUBLIC_REPRO_ROOT/scripts/validate_public_repository.py"
 
 section "Workflow Validators"
 cd "$ROOT"
@@ -62,8 +63,6 @@ cd "$ARTICLE_ROOT"
 python3 scripts/exal_m_t1_authoritative.py >/tmp/current_authority_snapshot.json
 rg -n "0\\.26045|0\\.02273|0\\.53806|lowest 28-day CRPS in all five|lowest 1--28-step-ahead CRPS at all five" \
   wileyNJD-APA.tex \
-  isba2026_poster/poster.tex \
-  isba2026_poster/README.md \
   tables/generated_tex/benchmark_crps_body.tex \
   artifacts/he2_publication_freeze/he2_bayesian_publication_manifest.csv \
   artifacts/he4_quantile_check_loss_current_publication/he4_selection_audit.csv
@@ -71,24 +70,21 @@ rg -n "0\\.26045|0\\.02273|0\\.53806|lowest 28-day CRPS in all five|lowest 1--28
 if rg -n --hidden -S \
   "four of five|first four|DQLM leads|AL-M-T1 leads|best corrected Bayesian row|Selected exDQLM is lowest at four|2022-12-25 exception" \
   wileyNJD-APA.tex \
-  isba2026_poster/poster.tex \
-  isba2026_poster/README.md \
-  isba2026_poster/notes \
   docs/figure_table_provenance.md \
   docs/exal_m_t1_artifact_run_map.md \
   artifacts/five_cutoff_crps_validation_sources \
   artifacts/five_cutoff_main_model_synthesis \
   artifacts/he4_quantile_check_loss_current_publication \
   artifacts/representative_selected_model_2022_12_25 \
-  reports/manuscript_figure_selection \
   -g '!*.png' -g '!*.pdf'; then
   echo "Found stale active-facing authority wording." >&2
   exit 1
 fi
 
-section "Poster PDF Smoke Test"
-pdfinfo isba2026_poster/poster.pdf | rg '^Pages:\s+1$'
-pdftotext isba2026_poster/poster.pdf - | rg "Selected exDQLM has the lowest 1.28.step.ahead CRPS|at all five origins"
+section "Public Reproducibility Repo Smoke Test"
+cd "$PUBLIC_REPRO_ROOT"
+make validate
+rg -n "san-lorenzo-exdqlm-reproducibility|exDQLM|compact staged inputs" README.md CITATION.cff provenance/reproducibility_levels.md
 
 section "Corrections Response Snapshot"
 cd "$CORRECTIONS_ROOT"
@@ -112,11 +108,6 @@ if [[ "$run_compile" -eq 1 ]]; then
   pdflatex -interaction=nonstopmode -halt-on-error wileyNJD-APA.tex
   pdflatex -interaction=nonstopmode -halt-on-error wileyNJD-APA.tex
 
-  section "Compile Poster"
-  Rscript isba2026_poster/scripts/build_poster_figures.R
-  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=isba2026_poster isba2026_poster/poster.tex
-  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=isba2026_poster isba2026_poster/poster.tex
-
   section "Compile Corrections"
   cd "$CORRECTIONS_ROOT"
   make
@@ -126,5 +117,6 @@ section "Git Status"
 git -C "$ROOT" status --short --branch
 git -C "$ARTICLE_ROOT" status --short --branch
 git -C "$CORRECTIONS_ROOT" status --short --branch
+git -C "$PUBLIC_REPRO_ROOT" status --short --branch
 
 section "Current Authority Sync Validation Passed"

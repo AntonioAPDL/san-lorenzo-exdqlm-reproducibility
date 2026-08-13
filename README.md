@@ -8,8 +8,8 @@ The repository is intentionally narrower than the live research
 workspace. It contains compact staged inputs, current manuscript-facing
 outputs, provenance, and the selected workflow code needed to inspect
 or rerun the reported case-study analysis. It does not contain raw
-climate-center archives, active runtime campaigns, local notebooks, or
-generated screening outputs.
+climate-center archives, active runtime campaigns, local notebooks,
+poster drafts, or generated screening/audit outputs.
 
 ## Quick Validation
 
@@ -63,6 +63,32 @@ The accompanying software paper is:
 ## Repository URL
 
 https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility
+
+## Source-Path Placeholders
+
+Copied text artifacts replace local machine paths with stable
+placeholders so the public tree can be read outside the original
+workspace:
+
+- `SOURCE_WORKFLOW_ROOT`: private live workflow repository used for export.
+- `SOURCE_ARTICLE_ROOT`: private revised manuscript repository used for export.
+- `SOURCE_CORRECTIONS_ROOT`: private response-letter repository used
+  for cross-repo validation.
+- `SOURCE_RUNTIME_ROOT`: private runtime root used for staged artifacts.
+- `STAGED_INPUT_BUNDLE_ROOT`: private staged-input bundle used for export.
+- `PUBLIC_REPRO_ROOT`: local checkout of this public reproducibility repo.
+- `LEGACY_EXAL_INPUT_ROOT`: legacy local input root referenced by older
+  workflow scripts.
+- `LEGACY_PROJECT_ROOT`: legacy local project root referenced by older
+  workflow scripts.
+- `LOCAL_RCPP_LIB_ROOT`: local compiled-library root referenced by
+  commented Rcpp setup notes.
+- `EXTERNAL_RUNTIME_SOURCE_ROOT`: external local runtime source tree used
+  in legacy provenance notes.
+
+Exact source paths and export-time commits are preserved only in
+`provenance/source_file_crosswalk.csv` and
+`provenance/runtime_source_crosswalk.csv`.
 
 ## License Status
 

@@ -39,6 +39,38 @@ REQUIRED = [
     "provenance/runtime_source_crosswalk.csv",
     "data/SHA256SUMS.txt",
 ]
+TEXT_SUFFIXES = {
+    ".R",
+    ".Rmd",
+    ".bib",
+    ".bst",
+    ".cff",
+    ".cls",
+    ".csv",
+    ".json",
+    ".md",
+    ".py",
+    ".sh",
+    ".sty",
+    ".tex",
+    ".txt",
+    ".yaml",
+    ".yml",
+}
+TEXT_FILENAMES = {"Makefile", "LICENSE", ".gitignore"}
+ALLOWED_LOCAL_PATH_FILES = {
+    "provenance/source_file_crosswalk.csv",
+    "provenance/runtime_source_crosswalk.csv",
+}
+LOCAL_PATH_MARKERS = ("/" + "data/muscat_data/", "/" + "data/jaguir26/")
+STALE_TEXT_MARKERS = (
+    "https://github.com/AntonioAPDL/" + "Project1",
+    "PROJECT1" + "_URL",
+    "chat" + "gpt",
+    "co" + "dex",
+    "ai" + "-generated",
+    "ai " + "wording",
+)
 
 
 def sha256(path: Path) -> str:
@@ -47,6 +79,10 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: fh.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def is_text_like(path: Path) -> bool:
+    return path.suffix in TEXT_SUFFIXES or path.name in TEXT_FILENAMES
 
 
 def main() -> int:
@@ -58,10 +94,22 @@ def main() -> int:
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
             continue
+        rel = path.relative_to(ROOT).as_posix()
         if path.suffix in FORBIDDEN_SUFFIXES:
-            errors.append(f"forbidden heavy/runtime file type: {path.relative_to(ROOT)}")
+            errors.append(f"forbidden heavy/runtime file type: {rel}")
         if path.stat().st_size > 100 * 1024 * 1024:
-            errors.append(f"oversized file >100MB: {path.relative_to(ROOT)}")
+            errors.append(f"oversized file >100MB: {rel}")
+        if is_text_like(path):
+            try:
+                text = path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+            lower_text = text.lower()
+            if rel not in ALLOWED_LOCAL_PATH_FILES and any(marker in text for marker in LOCAL_PATH_MARKERS):
+                errors.append(f"local absolute path outside provenance crosswalk: {rel}")
+            for marker in STALE_TEXT_MARKERS:
+                if marker.lower() in lower_text:
+                    errors.append(f"stale/internal marker {marker!r} in {rel}")
 
     manifest = ROOT / "data/SHA256SUMS.txt"
     if manifest.exists():

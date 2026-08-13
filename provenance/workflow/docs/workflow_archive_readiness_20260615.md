@@ -4,15 +4,16 @@ Date: 2026-06-15
 
 ## Purpose
 
-This checklist records what must be true before the public `Project1` workflow
-repository is converted from the current public revision state into a permanent
-archived release. It supports the HE-5 software-availability response without
-claiming that a final archive already exists.
+This checklist records what must be true before the public
+`san-lorenzo-exdqlm-reproducibility` repository is converted from the current
+review-stage export into a permanent archived release. It supports the HE-5
+software-availability response without claiming that a final archive already
+exists.
 
 ## Current State
 
 - CRAN `exdqlm` package: public.
-- Public study workflow repository: `https://github.com/AntonioAPDL/Project1`.
+- Public study workflow repository: `https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility`.
 - Revised article repository: manuscript-facing freeze of figures, tables,
   generated TeX fragments, and compact provenance manifests.
 - Permanent workflow archive DOI: pending final revision freeze.

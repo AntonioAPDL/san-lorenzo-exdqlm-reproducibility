@@ -1,5 +1,5 @@
 {
-  "manifest_path": "/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2/MANUSCRIPT_ASSET_MANIFEST.json",
+  "manifest_path": "SOURCE_ARTICLE_ROOT/MANUSCRIPT_ASSET_MANIFEST.json",
   "display_precision_digits": 5,
   "outputs": {
     "tab:benchmark_crps_models": "tables/generated_tex/benchmark_crps_raw_rows.tex",

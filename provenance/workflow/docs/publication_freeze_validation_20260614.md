@@ -28,12 +28,12 @@ Current selected `exAL-M-T1` winner manifest:
 
 Current HE3 ablation runtime root:
 
-- `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608`
+- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608`
 
 Current HE3 report bundle:
 
-- `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_summary.md`
-- `/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_wide.csv`
+- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_summary.md`
+- `SOURCE_RUNTIME_ROOT/multimodel_v8_he3_exdqlm_ablation_authoritative_winners_20260608/reports/he3_exdqlm_ablation/he3_ablation_wide.csv`
 
 Current frozen article artifacts:
 
@@ -114,7 +114,7 @@ python3 Evironmetrics---REVISED-DOC-Corrected-2/scripts/validate_manuscript_figu
   --article-root Evironmetrics---REVISED-DOC-Corrected-2
 python3 Evironmetrics---REVISED-DOC-Corrected-2/scripts/validate_authoritative_output_lineage.py \
   --article-root Evironmetrics---REVISED-DOC-Corrected-2 \
-  --corrections-root /data/muscat_data/jaguir26/Corrections---Project-1 \
+  --corrections-root SOURCE_CORRECTIONS_ROOT \
   --report-dir /tmp/authoritative_output_lineage_check_20260614
 ```
 
@@ -127,7 +127,7 @@ LaTeX compiles:
   pdflatex -interaction=nonstopmode -halt-on-error main.tex && \
   pdflatex -interaction=nonstopmode -halt-on-error main.tex)
 
-(cd /data/muscat_data/jaguir26/Corrections---Project-1 && \
+(cd SOURCE_CORRECTIONS_ROOT && \
   pdflatex -interaction=nonstopmode -halt-on-error main.tex && \
   pdflatex -interaction=nonstopmode -halt-on-error main.tex)
 ```
@@ -141,9 +141,9 @@ Strict cross-repo validation:
 
 ```bash
 python3 scripts/validate_revision_cross_repo_wiring.py \
-  --workflow-root /data/muscat_data/jaguir26/project1_ucsc_phd \
-  --article-root /data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2 \
-  --corrections-root /data/muscat_data/jaguir26/Corrections---Project-1 \
+  --workflow-root SOURCE_WORKFLOW_ROOT \
+  --article-root SOURCE_ARTICLE_ROOT \
+  --corrections-root SOURCE_CORRECTIONS_ROOT \
   --output-dir /tmp/revision_cross_repo_wiring_check_20260614 \
   --check-only --after-patch --strict
 ```

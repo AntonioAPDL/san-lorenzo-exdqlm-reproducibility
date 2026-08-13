@@ -1,4 +1,4 @@
 role,path,git_head,remote
-workflow_source,/data/muscat_data/jaguir26/project1_ucsc_phd,d2af337c2185e25089ba8a84359f2fc44a7d39d7,git@github.com:AntonioAPDL/Project1.git
-article_source,/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2,6dac158f9c25039c456d5b17876c25187dd5c689,https://github.com/AntonioAPDL/Evironmetrics---REVISED-DOC-Corrected-2.git
+workflow_source,/data/muscat_data/jaguir26/project1_ucsc_phd,6d7023cb64ec06f3511ad940bb80832d76443697,git@github.com:AntonioAPDL/Project1.git
+article_source,/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2,fb23a62de322ac1b7c87bf15e1b9a83472e0d86c,https://github.com/AntonioAPDL/Evironmetrics---REVISED-DOC-Corrected-2.git
 runtime_shared_input_bundle,/data/muscat_data/jaguir26/project1_ucsc_phd_runtime/multimodel_v8_he2_publication_shared_inputs_20260510,not_a_git_repository,local_runtime_bundle

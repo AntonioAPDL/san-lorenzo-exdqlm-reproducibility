@@ -21,8 +21,8 @@ SKIP_UNIVARIATE <- TRUE
 WRITE_FIGURES <- TRUE
 FIG_DIR <- "Environmetrics"
 
-COV_1_ELI_PATH <- "/data/muscat_data/jaguir26/projects/Project/Input/exAL/covariates/cov_1_ELI.csv"
-COV_2_ONI_PATH <- "/data/muscat_data/jaguir26/projects/Project/Input/exAL/covariates/cov_2_ONI.csv"
+COV_1_ELI_PATH <- "LEGACY_EXAL_INPUT_ROOT/covariates/cov_1_ELI.csv"
+COV_2_ONI_PATH <- "LEGACY_EXAL_INPUT_ROOT/covariates/cov_2_ONI.csv"
 
 log_msg <- function(msg) {
   cat(sprintf("[%s] %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), msg))

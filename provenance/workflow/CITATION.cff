@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this study workflow, cite the associated article and the final workflow archive once available. The permanent workflow archive DOI is pending final revision freeze."
-title: "Project1 workflow for Bayesian quantile-based correction and synthesis of river-flow forecasts"
+message: "If you use this study workflow, cite the associated article and the final reproducibility archive once available. The permanent archive DOI is pending final revision freeze."
+title: "San Lorenzo exDQLM reproducibility workflow"
 type: software
 authors:
   - family-names: Aguirre
@@ -9,8 +9,8 @@ authors:
     given-names: Raquel
   - family-names: Sanso
     given-names: Bruno
-repository-code: "https://github.com/AntonioAPDL/Project1"
-url: "https://github.com/AntonioAPDL/Project1"
+repository-code: "https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility"
+url: "https://github.com/AntonioAPDL/san-lorenzo-exdqlm-reproducibility"
 version: "pending-final-archive"
 keywords:
   - dynamic quantile linear model

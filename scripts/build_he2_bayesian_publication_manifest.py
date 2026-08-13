@@ -12,7 +12,7 @@ from typing import Any
 
 import yaml
 
-ROOT = Path("/data/muscat_data/jaguir26/project1_ucsc_phd")
+ROOT = Path("SOURCE_WORKFLOW_ROOT")
 RUNTIME_ROOT = ROOT.parent / "project1_ucsc_phd_runtime"
 OUT_DIR = ROOT / "reports" / "he2_publication_manifest"
 import sys

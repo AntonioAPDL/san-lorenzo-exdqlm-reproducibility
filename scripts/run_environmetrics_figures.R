@@ -26,7 +26,7 @@ split_env_paths <- function(key) {
   if (length(parts) == 0L) character(0) else unique(parts)
 }
 
-PROJECT_ROOT <- Sys.getenv("ENV_PROJECT_ROOT", "/data/muscat_data/jaguir26/project1_ucsc_phd")
+PROJECT_ROOT <- Sys.getenv("ENV_PROJECT_ROOT", "SOURCE_WORKFLOW_ROOT")
 PROJECT_ROOT <- normalizePath(PROJECT_ROOT, mustWork = FALSE)
 POST_CONTRACT_HELPERS <- file.path(PROJECT_ROOT, "R", "unified", "post_artifact_contract.R")
 if (!file.exists(POST_CONTRACT_HELPERS)) {

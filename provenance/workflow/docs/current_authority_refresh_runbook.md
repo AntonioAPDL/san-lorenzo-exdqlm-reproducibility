@@ -21,7 +21,7 @@ The current source of truth is:
 - article run map:
   `Evironmetrics---REVISED-DOC-Corrected-2/docs/exal_m_t1_artifact_run_map.md`
 - corrections response tables:
-  `/data/muscat_data/jaguir26/Corrections---Project-1/tables/generated_tex/`
+  `SOURCE_CORRECTIONS_ROOT/tables/generated_tex/`
 
 Do not treat exploratory screening output as publication authority until it has
 passed the promotion gates below and has been copied into the article/corrections
@@ -55,7 +55,7 @@ true:
 Start in the workflow repo:
 
 ```bash
-cd /data/muscat_data/jaguir26/project1_ucsc_phd
+cd SOURCE_WORKFLOW_ROOT
 ```
 
 If the replacement follows the current exDQLM multivariate-keep clean replay
@@ -85,11 +85,11 @@ python3 scripts/build_he2_publication_parity_gate.py
 Refresh the article-side HE2 freeze:
 
 ```bash
-ARTICLE_ROOT=/data/muscat_data/jaguir26/project1_ucsc_phd/Evironmetrics---REVISED-DOC-Corrected-2
+ARTICLE_ROOT=SOURCE_ARTICLE_ROOT
 
 python3 "$ARTICLE_ROOT/scripts/refresh_he2_manifest_snapshot.py" \
   --article-root "$ARTICLE_ROOT" \
-  --workflow-root /data/muscat_data/jaguir26/project1_ucsc_phd
+  --workflow-root SOURCE_WORKFLOW_ROOT
 ```
 
 Regenerate HE4 from the refreshed HE2 article manifest:
@@ -160,7 +160,7 @@ Regenerate the corrections response tables from the article generated table
 bodies:
 
 ```bash
-CORRECTIONS_ROOT=/data/muscat_data/jaguir26/Corrections---Project-1
+CORRECTIONS_ROOT=SOURCE_CORRECTIONS_ROOT
 
 python3 "$ARTICLE_ROOT/scripts/sync_corrections_generated_table_includes.py" \
   --article-root "$ARTICLE_ROOT" \
@@ -178,7 +178,7 @@ should remain generated from the article repo.
 The one-command current-authority validation wrapper is:
 
 ```bash
-cd /data/muscat_data/jaguir26/project1_ucsc_phd
+cd SOURCE_WORKFLOW_ROOT
 scripts/validate_current_authority_sync.sh
 ```
 
