@@ -49,7 +49,7 @@ Use a layered reproducibility contract:
   `README.md`, `CITATION.cff`, `LICENSE`, `Makefile`, and validation scripts.
 - Public reproducibility repo contains model-ready staged inputs for the five
   forecast origins, compact climate-product versioning notes, and public
-  metadata with low-level covariate-retrieval and blending internals removed.
+  metadata with low-level covariate-retrieval and forecast-covariate internals removed.
 - Workflow repo contains final archive checklist:
   `docs/workflow_archive_readiness_20260615.md`.
 - Workflow validators check the manifest and prose.

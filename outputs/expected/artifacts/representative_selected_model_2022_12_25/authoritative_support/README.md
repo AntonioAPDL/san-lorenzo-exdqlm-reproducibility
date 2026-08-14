@@ -8,7 +8,7 @@ The current compact support root rebuilds the fitted quantile-dynamics summaries
 
 Large compact support CSV/RDS files are intentionally not persisted in this Overleaf-facing article repository. The manifest records their external runtime source paths and hashes; the refresh script stages those files in a temporary directory only while rendering figures.
 
-- run id: `multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep`
+- run id: `selected_model_20221225_exdqlm_multivar_keep`
 - cutoff: `2022-12-25`
 - runtime output root: `SOURCE_RUNTIME_REFERENCE
 

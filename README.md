@@ -10,7 +10,7 @@ outputs, provenance, and the selected workflow code needed to inspect
 or rerun the reported case-study analysis from model-ready inputs. It
 does not contain raw climate-center archives, raw covariate-retrieval
 workflows, active runtime campaigns, local notebooks, poster drafts, or
-generated screening/audit outputs.
+internal exploratory outputs.
 
 ## Quick Validation
 
@@ -40,7 +40,7 @@ absence of forbidden heavy runtime formats.
 
 - `R/`: selected model, post-processing, and figure-generation code.
 - `scripts/`: orchestration, manifest, and validation scripts.
-- `config/`: selected publication and authority configuration files.
+- `config/`: selected public model-specification files.
 - `data/staged/`: compact model-ready inputs used by the five cutoff cases.
 - `outputs/expected/`: current manuscript-facing expected outputs and
   compact artifact bundles.

@@ -12,7 +12,7 @@ It is the run-level companion to:
 - `SOURCE_WORKFLOW_REFERENCE
 
 Important transition note:
-- the main HE2 benchmark authority now combines the two retained canonical-grid winners for `20210123` and `20211112` with three clean `20260623` replays for `20211221`, `20220511`, and `20221225`;
+- the main HE2 benchmark authority now combines the two retained selected-output winners for `20210123` and `20211112` with three clean `20260623` replays for `20211221`, `20220511`, and `20221225`;
 - the refreshed clean replays are the source for the promoted CRPS values, representative synthesis panel, cutoff-specific multivariate synthesis panels, posterior table exports, and source/covariate summaries;
 - the historical dry/wet and long-cycle seasonal support diagnostics are wired to the same current `2022-12-25` selected `exAL-M-T1` output authority as the representative synthesis figure, while remaining interpretation diagnostics rather than forecast-validation evidence.
 
@@ -54,11 +54,11 @@ These local copies are derived from the verified workflow replay roots and shoul
 
 | Cutoff | Local frozen copy | Authority run root | Authority CRPS source | Status |
 |---|---|---|---|---|
-| `2021-01-23` | `artifacts/five_cutoff_crps_validation_sources/20210123_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.13971` |
-| `2021-11-12` | `artifacts/five_cutoff_crps_validation_sources/20211112_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | retained authority, `0.04724` |
-| `2021-12-21` | `artifacts/five_cutoff_crps_validation_sources/20211221_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.26045` |
-| `2022-05-11` | `artifacts/five_cutoff_crps_validation_sources/20220511_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.02273` |
-| `2022-12-25` | `artifacts/five_cutoff_crps_validation_sources/20221225_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE | `post/outputs/.../tables/crps_forecast_summary.csv` | clean replay, `0.53806` |
+| `2021-01-23` | `artifacts/five_cutoff_crps_validation_sources/20210123_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE/selected_exdqlm_multivariate_keep_20210123` | `post/outputs/.../tables/crps_forecast_summary.csv` | selected output, `0.13971` |
+| `2021-11-12` | `artifacts/five_cutoff_crps_validation_sources/20211112_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE/selected_exdqlm_multivariate_keep_20211112` | `post/outputs/.../tables/crps_forecast_summary.csv` | selected output, `0.04724` |
+| `2021-12-21` | `artifacts/five_cutoff_crps_validation_sources/20211221_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE/selected_exdqlm_multivariate_keep_20211221` | `post/outputs/.../tables/crps_forecast_summary.csv` | selected output, `0.26045` |
+| `2022-05-11` | `artifacts/five_cutoff_crps_validation_sources/20220511_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE/selected_exdqlm_multivariate_keep_20220511` | `post/outputs/.../tables/crps_forecast_summary.csv` | selected output, `0.02273` |
+| `2022-12-25` | `artifacts/five_cutoff_crps_validation_sources/20221225_exal_m_t1/` | `SOURCE_RUNTIME_REFERENCE/selected_exdqlm_multivariate_keep_20221225` | `post/outputs/.../tables/crps_forecast_summary.csv` | selected output, `0.53806` |
 
 ## 3. Representative selected-model bundle
 

@@ -1,5 +1,5 @@
 # Configuration
 
-This directory contains selected publication-authority configuration
-files and manifests. Legacy exploratory grids and screening configs are
-not exported.
+This directory contains selected public model-specification files and
+manuscript support configuration. Internal exploratory campaign
+configs are not exported.

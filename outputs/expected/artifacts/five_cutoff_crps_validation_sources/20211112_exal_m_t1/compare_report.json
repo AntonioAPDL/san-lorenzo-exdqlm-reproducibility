@@ -1,6 +1,6 @@
 {
   "canonical_dir": "SOURCE_RUNTIME_REFERENCE",
-  "canonical_run_id": "multimodel_20211112_v8_he2grid_c04_eps365_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
+  "canonical_run_id": "selected_model_20211112_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
   "command_output_tail": "canonical comparison skipped",
   "command_status": 0,
   "compare_skipped": true,
@@ -63,6 +63,6 @@
   },
   "mode": "none",
   "profile": "production_proof",
-  "run_id": "multimodel_20211112_v8_he2grid_c04_eps365_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
+  "run_id": "selected_model_20211112_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
   "status": "pass"
 }

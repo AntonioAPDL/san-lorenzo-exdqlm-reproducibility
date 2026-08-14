@@ -32,6 +32,7 @@ REQUIRED = [
     "data/staged/covariates/local_precipitation_daily.csv",
     "data/staged/covariates/local_shallow_soil_water_daily.csv",
     "data/staged/covariates/gdpc_climate_index_pc1_daily.csv",
+    "config/selected_model_specifications/exdqlm_multivariate_keep_selected_outputs.yaml",
     "tables/generated_tex/benchmark_crps_main_table.tex",
     "figures/manuscript_context/site_context_usgs.png",
     "outputs/expected/artifacts/he2_publication_freeze/he2_bayesian_publication_manifest.csv",
@@ -50,6 +51,8 @@ TEXT_SUFFIXES = {
     ".cff",
     ".cls",
     ".csv",
+    ".html",
+    ".htm",
     ".json",
     ".md",
     ".py",
@@ -81,7 +84,16 @@ STALE_TEXT_MARKERS = (
 )
 FORBIDDEN_PUBLIC_PATHS = {
     "config/publication/unified_run.template.yaml",
-    "config/publication/exdqlm_multivar_keep_epsilon_discount_grid_20260524.csv",
+    "config/publication/he2_bayesian_publication_relaunch_20260510.template.yaml",
+    "config/publication/he2_bayesian_publication_relaunch_table1_targeted_repair_20260612.template.yaml",
+    "config/publication/he2_bayesian_publication_relaunch_univar_al_exal_scale_repair_20260629.template.yaml",
+    "config/publication/he2_bayesian_publication_relaunch_exdqlm_multivar_keep_partial_authority_refresh_20260623.template.yaml",
+    "config/publication/he2_publication_manifest_replacement_overlay_current_authority_20260623.yaml",
+    "config/publication/he2_publication_manifest_replacement_overlay_table1_targeted_repair_20260612.yaml",
+    "config/authority/exdqlm_multivar_keep_authoritative_specs_20260601.yaml",
+    "config/authority/he2_exal_m_t1_representative_20221225.yaml",
+    "config/publication/exdqlm_multivar_keep_selected_specifications_20260524.csv",
+    "outputs/expected/artifacts/he2_historical_support_audit",
     "provenance/workflow/docs/current_authority_refresh_runbook.md",
     "provenance/workflow/docs/canonical_gdpc_subset6_noi_soi_espi_pna_whwp_amo_20260527.md",
     "provenance/workflow/repro/GLOFAS_HARMONIZATION_QA_SPEC.md",
@@ -117,6 +129,28 @@ INTERNAL_COVARIATE_MARKERS = (
     "hist" + "fix",
     "legacy" + "_log_ready",
     "selected" + "_window_splice",
+)
+INTERNAL_SELECTION_MARKERS = (
+    "he2" + "grid",
+    "eps" + "001",
+    "eps" + "030",
+    "eps" + "060",
+    "eps" + "090",
+    "eps" + "180",
+    "eps" + "360",
+    "eps" + "365",
+    "discount" + "_grid",
+    "epsilon" + "_discount",
+    "canonical" + "_grid",
+    "canonical-" + "grid",
+    "partial" + "_screen",
+    "partial-" + "screen",
+    "best" + "_epsilon",
+    "selected" + "_epsilon",
+    "source" + "_epsilon",
+    "matrix" + "_epsilon",
+    "runner" + "_up",
+    "screen" + "ing",
 )
 
 
@@ -164,6 +198,9 @@ def main() -> int:
                 for marker in INTERNAL_COVARIATE_MARKERS:
                     if marker.lower() in lower_text:
                         errors.append(f"internal covariate-construction marker {marker!r} in {rel}")
+                for marker in INTERNAL_SELECTION_MARKERS:
+                    if marker.lower() in lower_text:
+                        errors.append(f"internal model-selection lineage marker {marker!r} in {rel}")
 
     manifest = ROOT / "data/SHA256SUMS.txt"
     if manifest.exists():

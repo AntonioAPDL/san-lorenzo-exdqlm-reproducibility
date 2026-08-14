@@ -1,4 +1,4 @@
 role,path,git_head,remote
-workflow_source,SOURCE_WORKFLOW_ROOT,b43e72b6b2bfcdc4b53da1c947d6274f71572b67,git@github.com:AntonioAPDL/Project1.git
-article_source,SOURCE_ARTICLE_ROOT,f02a3e080e08ff9294a1cf1b2a95816ebbee042d,https://github.com/AntonioAPDL/Evironmetrics---REVISED-DOC-Corrected-2.git
+workflow_source,SOURCE_WORKFLOW_ROOT,2d97f5483eeed6d12b6c9fd75f6e5cffcc4932db,git@github.com:AntonioAPDL/Project1.git
+article_source,SOURCE_ARTICLE_ROOT,8f5976ac754c603b8f646a609876726ca3af116e,https://github.com/AntonioAPDL/Evironmetrics---REVISED-DOC-Corrected-2.git
 runtime_shared_input_bundle,STAGED_INPUT_BUNDLE_ROOT,not_a_git_repository,local_runtime_bundle

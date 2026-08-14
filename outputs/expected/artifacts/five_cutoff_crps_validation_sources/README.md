@@ -12,4 +12,4 @@ For each cutoff, the local freeze contains:
 
 - `crps_forecast_per_time.csv`
 
-These files are copied from the current HE2 publication freeze. Some cutoffs may remain on the original canonical-grid roots, while promoted cutoffs point to clean replay roots.
+These files are copied from the current HE2 publication freeze. Some cutoffs may remain on the original selected-output roots, while promoted cutoffs point to clean replay roots.

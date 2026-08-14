@@ -2,7 +2,7 @@
   "cutoff": "2022-12-25",
   "published_crps": "0.6655",
   "replay_mean_crps": "0.53805548474584530",
-  "run_id": "multimodel_20221225_v8_he2partial20260623_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
+  "run_id": "selected_model_20221225_exdqlm_multivar_keep_authoritative_rdata_retained_current_20260623",
   "runtime_output_root": "SOURCE_RUNTIME_REFERENCE",
   "runtime_run_root": "SOURCE_RUNTIME_REFERENCE"
 }

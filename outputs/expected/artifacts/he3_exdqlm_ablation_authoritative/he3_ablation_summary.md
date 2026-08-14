@@ -4,23 +4,23 @@
 
 | Variant | Label | Mean CRPS | Status | Best Epsilon |
 |---|---|---:|---|---|
-| `full` | `exAL-M-T1` | 0.139709 | `pass` | `c04_eps365` |
-| `noTrend` | `exAL-M-T1-noTrend` | 1.051592 | `pass` | `c04_eps365` |
-| `noTF` | `exAL-M-noTF` | 1.736096 | `pass` | `c04_eps365` |
-| `noH1` | `exAL-M-T1-noH1` | 1.278609 | `pass` | `c04_eps365` |
-| `noH2` | `exAL-M-T1-noH2` | 0.726896 | `pass` | `c04_eps365` |
-| `noH3` | `exAL-M-T1-noH3` | 1.082814 | `pass` | `c04_eps365` |
+| `full` | `exAL-M-T1` | 0.139709 | `pass` | `selected_profile` |
+| `noTrend` | `exAL-M-T1-noTrend` | 1.051592 | `pass` | `selected_profile` |
+| `noTF` | `exAL-M-noTF` | 1.736096 | `pass` | `selected_profile` |
+| `noH1` | `exAL-M-T1-noH1` | 1.278609 | `pass` | `selected_profile` |
+| `noH2` | `exAL-M-T1-noH2` | 0.726896 | `pass` | `selected_profile` |
+| `noH3` | `exAL-M-T1-noH3` | 1.082814 | `pass` | `selected_profile` |
 
 ## Cutoff 11/12/2021
 
 | Variant | Label | Mean CRPS | Status | Best Epsilon |
 |---|---|---:|---|---|
-| `full` | `exAL-M-T1` | 0.047236 | `pass` | `c04_eps365` |
-| `noTrend` | `exAL-M-T1-noTrend` | 0.723427 | `pass` | `c04_eps365` |
-| `noTF` | `exAL-M-noTF` | 1.714090 | `pass` | `c04_eps365` |
-| `noH1` | `exAL-M-T1-noH1` | 1.601420 | `pass` | `c04_eps365` |
-| `noH2` | `exAL-M-T1-noH2` | 1.046992 | `pass` | `c04_eps365` |
-| `noH3` | `exAL-M-T1-noH3` | 1.035625 | `pass` | `c04_eps365` |
+| `full` | `exAL-M-T1` | 0.047236 | `pass` | `selected_profile` |
+| `noTrend` | `exAL-M-T1-noTrend` | 0.723427 | `pass` | `selected_profile` |
+| `noTF` | `exAL-M-noTF` | 1.714090 | `pass` | `selected_profile` |
+| `noH1` | `exAL-M-T1-noH1` | 1.601420 | `pass` | `selected_profile` |
+| `noH2` | `exAL-M-T1-noH2` | 1.046992 | `pass` | `selected_profile` |
+| `noH3` | `exAL-M-T1-noH3` | 1.035625 | `pass` | `selected_profile` |
 
 ## Cutoff 12/21/2021
 

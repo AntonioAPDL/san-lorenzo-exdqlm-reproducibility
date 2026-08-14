@@ -1,0 +1,113 @@
+schema_version: public_selected_model_specifications_v1
+scope: selected manuscript-facing exDQLM multivariate keep outputs
+note: This public file records the selected settings needed to interpret and rerun
+  the reported exAL-M-T1 case-study outputs from staged inputs. Internal exploratory
+  campaign labels are not part of the public release.
+shared_inputs:
+  site: USGS 11160500 San Lorenzo River at Big Trees
+  data_start: '1987-05-29'
+  active_quantiles:
+  - '0.05'
+  - '0.20'
+  - '0.35'
+  - '0.50'
+  - '0.65'
+  - '0.80'
+  - '0.95'
+  input_bundle_contract: PPT|SOIL|GDPC1
+selected_cutoffs:
+- cutoff: '20210123'
+  cutoff_date: '2021-01-23'
+  selected_output_id: selected_exdqlm_multivariate_keep_20210123
+  model_family: exdqlm_multivar_keep
+  manuscript_label: exAL-M-T1
+  forecast_covariance_prior:
+    c_factor: 1.0
+    prior_weight: 365
+  state_evolution:
+    df_t: 0.9995
+    df_s1: 0.999
+    df_s2: 0.999
+    df_s67: 0.9995
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.9999999
+    df_covs: 0.99999
+  forecast_window_mean_crps: '0.13970885488024820'
+  score_scale: log_cms_plus1
+- cutoff: '20211112'
+  cutoff_date: '2021-11-12'
+  selected_output_id: selected_exdqlm_multivariate_keep_20211112
+  model_family: exdqlm_multivar_keep
+  manuscript_label: exAL-M-T1
+  forecast_covariance_prior:
+    c_factor: 1.0
+    prior_weight: 365
+  state_evolution:
+    df_t: 0.9995
+    df_s1: 0.999
+    df_s2: 0.999
+    df_s67: 0.9995
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.9999999
+    df_covs: 0.99999
+  forecast_window_mean_crps: '0.047238151043841214'
+  score_scale: log_cms_plus1
+- cutoff: '20211221'
+  cutoff_date: '2021-12-21'
+  selected_output_id: selected_exdqlm_multivariate_keep_20211221
+  model_family: exdqlm_multivar_keep
+  manuscript_label: exAL-M-T1
+  forecast_covariance_prior:
+    c_factor: 1.0
+    prior_weight: 30.0
+  state_evolution:
+    df_t: 0.999999
+    df_s1: 0.9995
+    df_s2: 0.9995
+    df_s67: 0.9995
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.9999999
+    df_covs: 0.9999999
+  forecast_window_mean_crps: '0.26044660089543048'
+  score_scale: log_cms_plus1
+- cutoff: '20220511'
+  cutoff_date: '2022-05-11'
+  selected_output_id: selected_exdqlm_multivariate_keep_20220511
+  model_family: exdqlm_multivar_keep
+  manuscript_label: exAL-M-T1
+  forecast_covariance_prior:
+    c_factor: 1.0
+    prior_weight: 1.0
+  state_evolution:
+    df_t: 0.9999999
+    df_s1: 0.9995
+    df_s2: 0.9995
+    df_s67: 0.9995
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.999999
+    df_covs: 0.999999
+  forecast_window_mean_crps: '0.022728178320301304'
+  score_scale: log_cms_plus1
+- cutoff: '20221225'
+  cutoff_date: '2022-12-25'
+  selected_output_id: selected_exdqlm_multivariate_keep_20221225
+  model_family: exdqlm_multivar_keep
+  manuscript_label: exAL-M-T1
+  forecast_covariance_prior:
+    c_factor: 1.0
+    prior_weight: 1.0
+  state_evolution:
+    df_t: 0.999999
+    df_s1: 0.9995
+    df_s2: 0.9995
+    df_s67: 0.9999
+    df_discrep: 0.999
+    lambda: 0.97
+    df_trans: 0.9999999
+    df_covs: 0.9999999
+  forecast_window_mean_crps: '0.53805548474584530'
+  score_scale: log_cms_plus1

@@ -83,7 +83,7 @@ benchmark table, five-cutoff CRPS validation sources, representative
 `2022-12-25` synthesis bundle, posterior table exports, source/covariate
 summaries, and cutoff-specific multivariate synthesis panels now use:
 
-- retained canonical-grid winners for `20210123` and `20211112`;
+- retained selected-output winners for `20210123` and `20211112`;
 - clean replays from
   `SOURCE_RUNTIME_REFERENCE
   for `20211221`, `20220511`, and `20221225`.
@@ -342,7 +342,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 2. `forecats.png` remains more delicate than the other setup figures, but the canonical `v2` path now stages bundle-native forecast inputs explicitly.
    - The workflow repo includes a dedicated reproducibility plan at:
      - `repro/FORECATS_INPUTS_AND_WEIGHTING_PLAN.md`
-   - The corrected cutoff-specific derivation anchors that figure to the CRPS-linked `exAL-M-T1` source manifest and the authoritative forecats/long_history_support bundles instead of the older generic paper-level copy.
+   - The corrected cutoff-specific derivation anchors that figure to the CRPS-linked `exAL-M-T1` source manifest and the selected forecast/setup support bundles instead of the older generic paper-level copy.
 
 3. The dry/wet regime figures and the appendix long-cycle figure are now regenerated from the representative selected-model support bundle.
    - They are locked to the same `2022-12-25 exAL-M-T1` selected-output authority as the representative synthesis figure.
@@ -392,7 +392,7 @@ The following manuscript figure assets in `Evironmetrics---REVISED-DOC-Corrected
 ## Provenance classification for the next phase
 
 ### Group A: keep as cutoff-specific setup/support figures
-These are now reproduced through the corrected `v2` per-cutoff family derived from the verified five-run `exAL-M-T1` bundles and the authoritative forecats/long_history_support bundle roots.
+These are now reproduced through the corrected `v2` per-cutoff family derived from the verified five-run `exAL-M-T1` bundles and the selected forecast/setup support bundle roots.
 - `fig:sanlorenzo`
 - `fig:covariates`
 - `fig:retrospectives`

@@ -10,7 +10,7 @@
       "source": "SOURCE_RUNTIME_REFERENCE"
     },
     "retained_state_summary_path": "SOURCE_ARTICLE_REFERENCE",
-    "run_id": "multimodel_20220511_v8_he2grid_c02_eps060_exdqlm_multivar_keep",
+    "run_id": "selected_model_20220511_exdqlm_multivar_keep",
     "slug": "20220511_exal_m_t1"
   },
   "univar_reference_refresh_mode": "univar_reference_only",
